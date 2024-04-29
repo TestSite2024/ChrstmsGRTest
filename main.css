@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    background: linear-gradient(135deg, #655aff, #ff74b7);
+  }
+#scratcher-box {
+    width: 35em;
+  align-content: center;
+  height: 35em;
+  background-color:#ffffff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 2%;
+}
+
+.scratcher-bottom-margin {
+	margin-bottom: 50px;
+}
+
+#text-area {
+	margin: 15px 10px;
+}
+
+#bottom-text-area {
+	margin: 15px 0;
+	font-size: 85%;
+}
+
+#scratcher-box canvas {
+	border: 1px solid gray;
+	margin: 5px 5px 5px 5px;
+	cursor: grab;
+}
+
+#scratcher3Pct {
+	font: sans-serif;
+	font-size: 0.8em;
+}
