@@ -92,6 +92,8 @@ Scratcher = (function() {
         this._setupCanvases(); // finish setup from constructor now
     
         this.setImages(backImage, frontImage);
+        
+
     
         this._eventListeners = {};
     };
@@ -173,6 +175,7 @@ Scratcher = (function() {
         var tempctx = this.canvas.temp.getContext('2d');
         var mainctx = this.canvas.main.getContext('2d');
     
+    
         // Step 1: clear the temp
         this.canvas.temp.width = this.canvas.temp.width; // resizing clears
     
@@ -181,10 +184,10 @@ Scratcher = (function() {
     
         // Step 3: stamp the background on the temp (!! source-atop mode !!)
         tempctx.globalCompositeOperation = 'source-atop';
-        tempctx.drawImage(this.image.back.img, 0, 0);
+        tempctx.drawImage(this.image.back.img, 0, 0,this.image.back.img.width, this.image.back.img.height,0,0,this.canvas.temp.width,this.canvas.temp.height);
     
         // Step 4: stamp the foreground on the display canvas (source-over)
-        mainctx.drawImage(this.image.front.img, 0, 0);
+        mainctx.drawImage(this.image.front.img, 0, 0,this.image.front.img.width, this.image.front.img.height,0,0,this.canvas.temp.width,this.canvas.temp.height);
     
         // Step 5: stamp the temp on the display canvas (source-over)
         mainctx.drawImage(this.canvas.temp, 0, 0);
