@@ -178,19 +178,39 @@ Scratcher = (function() {
     
         // Step 1: clear the temp
         this.canvas.temp.width = this.canvas.temp.width; // resizing clears
-    
+        tempctx.save();
+        tempctx.beginPath();
+        tempctx.arc(50, 50, 50, 0, Math.PI * 2, true);
+        tempctx.closePath();
+        tempctx.clip();
         // Step 2: stamp the draw on the temp (source-over)
         tempctx.drawImage(this.canvas.draw, 0, 0);
-    
+        tempctx.beginPath();
+        tempctx.arc(0, 0, 50, 0, Math.PI * 2, true);
+        tempctx.clip();
+        tempctx.closePath();
+        tempctx.restore();
         // Step 3: stamp the background on the temp (!! source-atop mode !!)
         tempctx.globalCompositeOperation = 'source-atop';
         tempctx.drawImage(this.image.back.img, 0, 0,this.image.back.img.width, this.image.back.img.height,0,0,this.canvas.temp.width,this.canvas.temp.height);
     
+        mainctx.save();
+        mainctx.beginPath();
+        mainctx.arc(50, 50, 50, 0, Math.PI * 2, true);
+        mainctx.closePath();
+        mainctx.clip();
         // Step 4: stamp the foreground on the display canvas (source-over)
         mainctx.drawImage(this.image.front.img, 0, 0,this.image.front.img.width, this.image.front.img.height,0,0,this.canvas.temp.width,this.canvas.temp.height);
-    
+        mainctx.beginPath();
+        mainctx.arc(0, 0, 50, 0, Math.PI * 2, true);
+        mainctx.clip();
+        mainctx.closePath();
+        mainctx.restore();
+
+
         // Step 5: stamp the temp on the display canvas (source-over)
         mainctx.drawImage(this.canvas.temp, 0, 0);
+
     };
     
     /**
@@ -204,7 +224,7 @@ Scratcher = (function() {
     Scratcher.prototype.scratchLine = function(x, y, fresh) {
         var can = this.canvas.draw;
         var ctx = can.getContext('2d');
-        ctx.lineWidth = 30;
+        ctx.lineWidth = 10;
         ctx.lineCap = ctx.lineJoin = 'round';
         ctx.strokeStyle = '#f00'; // can be any opaque color
         if (fresh) {
