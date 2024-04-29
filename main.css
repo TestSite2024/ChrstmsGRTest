@@ -17,6 +17,37 @@ table {
       display: block;
   }
 }
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pagetop h1 {
+font-family: "Pacifico", cursive;
+display:flex;
+font-weight: 400;
+flex-direction: column;
+font-size:10vh;
+text-align: center;
+} 
+.pagetop h3 {
+  font-family: "Indie Flower", cursive;
+  display:flex;
+  font-weight: 10;
+  flex-direction: column;
+  font-size:3vh;
+  text-align: center;
+  } 
+  .pagetop h4 {
+    font-family: "Sans", cursive;
+    display:flex;
+    font-weight: 10;
+    color: #ffffff;
+    flex-direction: column;
+    font-size:2vh;
+    text-align: center;
+    } 
 #scratcher-box {
     width:25em;
   align-content: center;
@@ -24,9 +55,9 @@ table {
   background-color:#ffffff;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
+  top: 60%;
   left: 50%;
-  border-radius: 2%;
+  border-radius: 5%;
 }
 
 .scratcher-bottom-margin {
@@ -43,7 +74,7 @@ table {
 }
 
 #scratcher-box canvas {
-	border: 1px solid gray;
+
 	margin: 5px 5px 5px 5px;
 	cursor: grab;
 }
@@ -51,4 +82,14 @@ table {
 #scratcher3Pct {
 	font: sans-serif;
 	font-size: 0.8em;
+}
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
