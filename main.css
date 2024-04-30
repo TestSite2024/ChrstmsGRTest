@@ -34,7 +34,7 @@ text-align: center;
 .pagetop h3 {
 font-family: "Indie Flower", cursive;
 display:flex;
-font-weight: 10;
+font-style: normal;
 flex-direction: column;
 font-size:3vh;
 text-align: center;
