@@ -9,6 +9,9 @@ body {
 }
 table { 
   table-layout:fixed;
+  transform: translate(0%, 10%);
+  top: 75%;
+  left: 10%;
 }
 @media only screen and (max-width: 480px) {
 /* horizontal scrollbar for tables if mobile screen */
@@ -55,7 +58,7 @@ height:22em;
 background-color:#ffffff;
 position: absolute;
 transform: translate(-50%, -50%);
-top: 60%;
+top: 65%;
 left: 50%;
 border-radius: 5%;
 }
