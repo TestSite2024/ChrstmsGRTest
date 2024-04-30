@@ -24,9 +24,15 @@
     
         // Only test every 32nd pixel. 32x faster, but might lead to
         // inaccuracy:
-        var pct = (this.fullAmount(32) * 100)|0;
-    
-        $('#scratcher3Pct').html('' + pct + '%');
+        var pct1 = (scratchers[3].fullAmount(32) * 100)|0;
+        var pct2 = (scratchers[4].fullAmount(32) * 100)|0;
+        var pct3 = (scratchers[5].fullAmount(32) * 100)|0;
+        $('#scratcher3Pct').html(' ' + pct1 + '%');
+
+        if (pct1>10 && pct2>10 && pct3>10) {
+                    $('#scratcher3Pct').html('It is a girl!');
+                    document.getElementById("scratcher3Pct").innerHTML="It is a GIRL!";
+        }
     };
     
     /**
@@ -53,7 +59,7 @@
         // called each time a scratcher loads
         function onScratcherLoaded(ev) {
             scratcherLoadedCount++;
-    
+            $("table1").width($(window).width());
             if (scratcherLoadedCount == scratchers.length) {
                 // all scratchers loaded!
     
@@ -79,14 +85,19 @@
             scratchers[i].addEventListener('imagesloaded', onScratcherLoaded);
     
             scratchers[i].setImages('images/s' + i1 + 'bg.jpg',
-                'images/s' + i1 + 'fg.png');
+                'images/foreground.jpg');
+        
         }
     
         // get notifications of this scratcher changing
         // (These aren't "real" event listeners; they're implemented on top
         // of Scratcher.)
-        scratchers[2].addEventListener('reset', scratcher3Changed);
-        scratchers[2].addEventListener('scratch', scratcher3Changed);
+        //scratchers[3].addEventListener('reset', scratchersChanged);
+        scratchers[3].addEventListener('scratchesended', scratcher3Changed);
+        //scratchers[4].addEventListener('reset', scratchersChanged);
+        scratchers[4].addEventListener('scratchesended', scratcher3Changed);
+        //scratchers[5].addEventListener('reset', scratchersChanged);
+        scratchers[5].addEventListener('scratchesended', scratcher3Changed);
     
         // Or if you didn't want to do it every scratch (to save CPU), you
         // can just do it on 'scratchesended' instead of 'scratch':
