@@ -13,7 +13,7 @@
 <link href='https://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'>
 -->
-
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <!-- MathJax -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -59,7 +59,7 @@ custom highlight.js
 <body>
 <div class="pagetop">
  <!-- .pagetop -->
-<br><h1>Boy or Girl</h1><br>
+<br><h1 id="title">Boy or Girl</h1><br>
 <h3>Scratch to reveal the gender of the baby!</h3>
 <h4>If you find 3 in a row, column or diagonal, you found the gender.</h4>
 </div>
@@ -71,7 +71,7 @@ custom highlight.js
 <p><noscript>(This demo requires JavaScript to run correctly.)</noscript></p>
 <div id="scratcher-box" class="shadow1light autosb">
   <div class="scratcher-margin-bottom">
-		<table id="table1" style="margin-left: auto; margin-right: auto;margin-top: 1vh; margin-bottom: auto;">
+		<table id="table1" style="margin-left: auto; margin-right: auto;margin-top: auto; margin-bottom: auto;">
       <tr><td><canvas id="scratcher1" class="demo-canvas shadow1light" width="100%" height="100%"></canvas>
       </td>
       <td><canvas id="scratcher2" class="demo-canvas shadow1light" width="100%" height="100%"></canvas>
@@ -94,9 +94,15 @@ custom highlight.js
   </div>
 	<br>
 	<div id="scratcher3Pct">Find the gender</div>
-  <br><input type="button" value="Start Again!" id="resetbutton">
-	<br>
+  <br><br><input type="button" value="Start Again!" id="resetbutton">
 </div> <!-- #canvas-box -->
 <!-- End scratcher -->
+<div hidden id="lamebrowser">
+  <p><strong>Your browser doesn't support HTML canvas.</strong> Get a modern browser such
+  as <a href="http://www.google.com/chrome/">Chrome</a>,
+  <a href="http://firefox.com/">Firefox</a>, <a href="http://www.opera.com/">Opera</a>, or
+  <a href="http://windows.microsoft.com/en-us/internet-explorer/products/ie/home">IE9</a>.
+  And then, only then, will you be able to see this demo. Sorry!</p>
+  </div>
 </html>
 <!-- end common pagebottom -->
