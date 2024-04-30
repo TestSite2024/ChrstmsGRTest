@@ -144,7 +144,7 @@ Scratcher = (function() {
                 count++;
             }
         }
-    
+        
         return count / total;
     };
     
