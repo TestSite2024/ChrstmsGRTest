@@ -21,14 +21,16 @@
             if (pct3<20 || pct4<20 || pct5<20)  {
 
             //$('#scratcher3Pct').html('It is a girl!');
+            $("#scratcher3Pct").show();
             document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
             } 
         }
         if (pct3>20 && pct4>20 && pct5>20) {
             $('#title').html('It is a girl!');
             document.getElementById("title").style.color = "#FDB3FD";
-            document.getElementById("scratcher3Pct").innerHTML="It is a GIRL!";
+            finished=true;
             confetti_effect();
+
         }
     };
     function scratcher3Changed(ev) {
@@ -55,34 +57,44 @@
         return Math.random() * (max - min) + min;
     }
     function confetti_effect() {
-        var duration = 15 * 1000;
+
+        var duration = 10 * 1000;
         var animationEnd = Date.now() + duration;
-        var defaults = { startVelocity: 10, spread: 360, ticks: 60, zIndex: 0 };
+        var defaults = { startVelocity: 10, spread: 360, ticks: 70, zIndex: 0 };
 
         var interval = setInterval(function() {
         var timeLeft = animationEnd - Date.now();
 
         if (timeLeft <= 0) {
+            //console.log("bitti");
+            $("#resetbutton").click();
+            //onResetClicked(scratchers);
+
             return clearInterval(interval);
         }
 
         var particleCount = 50 * (timeLeft / duration);
         // since particles fall down, start a bit higher than random
         confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#FDB3FD']});
-        confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },colors: ['#FDB3FD'] });
+        confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },colors: ['#FDB3F'] });
         }, 250);
+         
     }
     /**
      * Reset all scratchers
      */
     function onResetClicked(scratchers) {
         var i;
-    
+        pct3=0;
+        pct4=0;
+        pct5=0;
+        $("#scratcher3Pct").hide();
+
         for (i = 0; i < scratchers.length; i++) {
             scratchers[i].reset();
         }
         $("#scratcher3Pct").html('Find the gender');
-        pct3,pct4,pct5=0;
+       
         $('#title').html('Boy or Girl');
         document.getElementById("title").style.color = "#000000";
 
@@ -97,7 +109,8 @@
         var scratchers = [];
         var pct3,pct4,pct5=0;
         var i, i1;
-       
+        var finished=false;
+        
         // called each time a scratcher loads
         function onScratcherLoaded(ev) {
             scratcherLoadedCount++;
@@ -111,8 +124,8 @@
                     });
     
                 // hide loading text, show instructions text
-                $('#loading-text').hide();
-                $('#inst-text').show();
+                //$('#loading-text').hide();
+                //$('#inst-text').show();
             }
         };
     
@@ -130,7 +143,7 @@
                 'images/foreground.jpg');
         
         }
-    
+        
         // get notifications of this scratcher changing
         // (These aren't "real" event listeners; they're implemented on top
         // of Scratcher.)

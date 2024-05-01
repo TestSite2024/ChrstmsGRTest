@@ -62,15 +62,21 @@ custom highlight.js
 <br><h1 id="title">Boy or Girl</h1><br>
 <h3>Scratch to reveal the gender of the baby!</h3>
 <h4>If you find 3 in a row, column or diagonal, you found the gender.</h4>
+<br>
+
 </div>
 <div id="mainbody">
 <!-- end common pagetop -->
 
 <!-- Begin scratcher -->
+<br>
+
 
 <p><noscript>(This demo requires JavaScript to run correctly.)</noscript></p>
 <div id="scratcher-box" class="shadow1light autosb">
+ 
   <div class="scratcher-margin-bottom">
+    <h4 style="display: none;" id="scratcher3Pct">Find the gender</h4>
 		<table id="table1" style="margin-left: auto; margin-right: auto;margin-top: auto; margin-bottom: auto;">
       <tr><td><canvas id="scratcher1" class="demo-canvas shadow1light" width="100%" height="100%"></canvas>
       </td>
@@ -93,8 +99,8 @@ custom highlight.js
       </table>
   </div>
 	<br>
-	<div id="scratcher3Pct">Find the gender</div>
-  <br><br><input type="button" value="Start Again!" id="resetbutton">
+  <br><br>
+  <input type="button" id="resetbutton" style="display: none;" value="Start Again!"></input>
 </div> <!-- #canvas-box -->
 <!-- End scratcher -->
 <div hidden id="lamebrowser">

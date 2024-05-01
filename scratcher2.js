@@ -1,19 +1,5 @@
 /**
- * Scratch-off canvas
- *
- * NOTE: this code monkeypatches Function.prototype.bind() if it doesn't
- * already exist.
- *
- * NOTE: This is demo code that has been converted to be less demo-y.
- * But it is still demo-y.
- *
- * To make (more) correct:
- *  o   add error handling on image loads
- *  o   fix inefficiencies
- *
  * depends on jQuery>=1.7
- *
- * Copyright (c) 2012 Brian "Beej Jorgensen" Hall <beej@beej.us>
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -34,13 +20,14 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+var disabled=false;
 
 Scratcher = (function() {
-
     /**
      * Helper function to extract the coordinates from an event, whether the
      * event is a mouse or touch.
      */
+
     function getEventCoords(ev) {
         var first, coords = {};
         var origEv = ev.originalEvent; // get from jQuery
@@ -70,7 +57,7 @@ Scratcher = (function() {
             'y': coords.pageY - offset.top
         };
     };
-    
+
     /**
      * Construct a new scratcher object
      *
@@ -84,9 +71,8 @@ Scratcher = (function() {
             'temp':null,
             'draw':null
         };
-    
         this.mouseDown = false;
-    
+
         this.canvasId = canvasId;
     
         this._setupCanvases(); // finish setup from constructor now
@@ -262,7 +248,6 @@ Scratcher = (function() {
         function mousedown_handler(e) {
             var local = getLocalCoords(c, getEventCoords(e));
             this.mouseDown = true;
-    
             this.scratchLine(local.x, local.y, true);
             this.recompositeCanvases();
     
