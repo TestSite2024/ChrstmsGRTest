@@ -9,6 +9,8 @@
      *
      * From http://diveintohtml5.info/
      */
+    var audio = new Audio('audio/celebrate.mp3');
+
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
     };
@@ -22,15 +24,18 @@
 
             //$('#scratcher3Pct').html('It is a girl!');
             $("#scratcher3Pct").show();
+            //alert("Scratch MORE!");
             document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
             } 
         }
         if (pct3>20 && pct4>20 && pct5>20) {
             $('#title').html('It is a girl!');
             document.getElementById("title").style.color = "#FDB3FD";
-            finished=true;
+            document.getElementById("title").style.fontSize = "16vmin";
+            $('#H3').hide();
+            $('#H4').hide();
+            $('#scratcher3Pct').hide();
             confetti_effect();
-
         }
     };
     function scratcher3Changed(ev) {
@@ -57,6 +62,7 @@
         return Math.random() * (max - min) + min;
     }
     function confetti_effect() {
+        audio.play();
 
         var duration = 10 * 1000;
         var animationEnd = Date.now() + duration;
@@ -66,10 +72,10 @@
         var timeLeft = animationEnd - Date.now();
 
         if (timeLeft <= 0) {
-            //console.log("bitti");
-            $("#resetbutton").click();
+            console.log("bitti");
+            $("#resetbutton").show();
             //onResetClicked(scratchers);
-
+            audio.stop();
             return clearInterval(interval);
         }
 
@@ -89,7 +95,7 @@
         pct4=0;
         pct5=0;
         $("#scratcher3Pct").hide();
-
+        $("#resetbutton").hide();
         for (i = 0; i < scratchers.length; i++) {
             scratchers[i].reset();
         }
@@ -97,6 +103,9 @@
        
         $('#title').html('Boy or Girl');
         document.getElementById("title").style.color = "#000000";
+        document.getElementById("title").style.fontSize = "15vmin";
+        $('#H3').show();
+        $('#H4').show();
 
         return false;
     };
