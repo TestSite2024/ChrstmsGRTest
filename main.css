@@ -5,7 +5,7 @@
 }
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #655aff, #ff74b7);
+  background:  repeating-linear-gradient(135deg, #928afc, #ffa7d1);
 }
 table { 
   table-layout:fixed;
@@ -13,7 +13,7 @@ table {
   top: 75%;
   left: 10%;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
 /* horizontal scrollbar for tables if mobile screen */
 .tablemobile {
     overflow-x: auto;
@@ -31,7 +31,7 @@ font-family: "Pacifico", cursive;
 display:flex;
 font-weight: 400;
 flex-direction: column;
-font-size:12vmin;
+font-size:15vmin;
 text-align: center;
 } 
 .pagetop h3 {
@@ -48,7 +48,7 @@ text-align: center;
   font-weight: 0;
   color: #ffffff;
   flex-direction: column;
-  font-size:2vmin;
+  font-size:3vmin;
   text-align: center;
   } 
 
