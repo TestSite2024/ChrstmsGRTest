@@ -2,10 +2,23 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  white-space:nowrap;
 }
 body {
   height: 100vh;
-  background:  repeating-linear-gradient(135deg, #928afc, #ffa7d1);
+  background:  linear-gradient(90deg, #ff95c8, #7fffd4);
+  background-size: 100% 200%;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 table { 
   table-layout:fixed;
@@ -28,11 +41,12 @@ font-style: normal;
 
 .pagetop h1 {
 font-family: "Pacifico", cursive;
-display:flex;
+display:inline-flexbox;
 font-weight: 400;
 flex-direction: column;
 font-size:15vmin;
 text-align: center;
+text-shadow: 4px 6px #FFFFFF;
 } 
 .pagetop h3 {
 font-family: "Indie Flower", cursive;
