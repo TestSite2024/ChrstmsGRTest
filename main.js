@@ -10,7 +10,7 @@
      * From http://diveintohtml5.info/
      */
     var audio = new Audio('audio/celebrate.mp3');
-
+    var triggered=false;
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
     };
@@ -35,6 +35,7 @@
             $('#H3').hide();
             $('#H4').hide();
             $('#scratcher3Pct').hide();
+
             confetti_effect();
         }
     };
@@ -60,32 +61,61 @@
     };
     function randomInRange(min, max) {
         return Math.random() * (max - min) + min;
-    }
+    };
     function confetti_effect() {
+        if(triggered==true) {
+            return;
+        }
         audio.play();
+        triggered=true;
+// do this for 10 seconds
+var duration = 10 * 1000;
+var end = Date.now() + duration;
+var defaults = { startVelocity: 10, spread: 360, ticks: 70, zIndex: 0 };
+var particleCount = 5;
+(function frame() {
+  // launch a few confetti from the left edge
+  confetti({...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#FDB3FD']}
+  );
+  // and launch a few from the right edge
+  confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },colors: ['#FDB3FD']}
+  );
 
-        var duration = 10 * 1000;
+  // keep going until we are out of time
+  if (Date.now() < end) {
+    requestAnimationFrame(frame);
+    
+    return;
+  }
+  console.log("triggered");
+  $("#resetbutton").show();
+  //onResetClicked(scratchers);
+  audio.stop();    
+}());
+        /* var duration = 10 * 1000;
         var animationEnd = Date.now() + duration;
         var defaults = { startVelocity: 10, spread: 360, ticks: 70, zIndex: 0 };
 
-        var interval = setInterval(function() {
+        interval = setInterval(()=> {
         var timeLeft = animationEnd - Date.now();
 
         if (timeLeft <= 0) {
-            console.log("bitti");
+            console.log("triggered");
+
             $("#resetbutton").show();
             //onResetClicked(scratchers);
             audio.stop();
-            return clearInterval(interval);
+            clearInterval(interval);
+            return 
         }
 
         var particleCount = 50 * (timeLeft / duration);
         // since particles fall down, start a bit higher than random
         confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#FDB3FD']});
-        confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },colors: ['#FDB3F'] });
-        }, 250);
+        confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },colors: ['#FDB3FD'] });
+        }, 250); */
          
-    }
+    };
     /**
      * Reset all scratchers
      */
@@ -106,7 +136,7 @@
         document.getElementById("title").style.fontSize = "15vmin";
         $('#H3').show();
         $('#H4').show();
-
+        triggered = false;
         return false;
     };
     
@@ -118,8 +148,7 @@
         var scratchers = [];
         var pct3,pct4,pct5=0;
         var i, i1;
-        var finished=false;
-        
+        //var surname = searchParams.get('surname');
         // called each time a scratcher loads
         function onScratcherLoaded(ev) {
             scratcherLoadedCount++;
