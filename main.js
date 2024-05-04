@@ -83,7 +83,7 @@
         var duration = 10 * 1000;
         var end = Date.now() + duration;
         var defaults = { startVelocity: 10, spread: 360, ticks: 70, zIndex: 0 };
-        var particleCount = 5 * (end-Date.now())/duration;
+        var particleCount = 5 ;
         (function frame() {
         // launch a few confetti from the left edge
         confetti({...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#FFFFFF']}
@@ -121,7 +121,7 @@
         //$("#scratcher3Pct").html('Find the gender');
        
         $('#boy').text('Boy');
-        $('#boy').css('color','#7FB1ED');
+        $('#boy').css('color','#7fffd4');
         $('#or').show();
         $('#girl').show();
 
