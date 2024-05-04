@@ -12,7 +12,7 @@
     var audio = new Audio('audio/celebrate.mp3');
     var triggered=false;
     var nosound=true;
-    var params = getSearchParameters();
+    var params = new URLSearchParams(window.location.search.slice(1));
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
     };
@@ -106,20 +106,7 @@
      
          
     };
-    function getSearchParameters() {
-        var prmstr = window.location.search.slice(1);
-        return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
-    }
     
-    function transformToAssocArray( prmstr ) {
-        var params = {};
-        var prmarr = prmstr.split("&");
-        for ( var i = 0; i < prmarr.length; i++) {
-            var tmparr = prmarr[i].split("=");
-            params[tmparr[0]] = tmparr[1];
-        }
-        return params;
-    }
     /**
      * Reset all scratchers
      */
@@ -169,8 +156,8 @@
         }
 
         //console.log(params.surname);
-        if (typeof(params.surname) != "undefined") {
-            $("#baby").text('baby ' + params.surname+'!');}
+        if (params.get('surname') != null) {
+            $("#baby").text('baby ' + params.get('surname')+'!');}
         else {
             $("#baby").text('the baby!');
         }
