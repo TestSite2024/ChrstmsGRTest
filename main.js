@@ -168,8 +168,13 @@
             nosound=true;
         }
 
-        //var surname = searchParams.get('surname');
-        $("baby").text = params.surname;
+        //console.log(params.surname);
+        if (typeof(params.surname) != "undefined") {
+            $("#baby").text('baby ' + params.surname+'!');}
+        else {
+            $("#baby").text('the baby!');
+        }
+        
         // called each time a scratcher loads
         function onScratcherLoaded(ev) {
             
