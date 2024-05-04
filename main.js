@@ -12,6 +12,7 @@
     var audio = new Audio('audio/celebrate.mp3');
     var triggered=false;
     var nosound=true;
+    var params = getSearchParameters();
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
     };
@@ -105,6 +106,20 @@
      
          
     };
+    function getSearchParameters() {
+        var prmstr = window.location.search.slice(1);
+        return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+    }
+    
+    function transformToAssocArray( prmstr ) {
+        var params = {};
+        var prmarr = prmstr.split("&");
+        for ( var i = 0; i < prmarr.length; i++) {
+            var tmparr = prmarr[i].split("=");
+            params[tmparr[0]] = tmparr[1];
+        }
+        return params;
+    }
     /**
      * Reset all scratchers
      */
@@ -121,7 +136,7 @@
         //$("#scratcher3Pct").html('Find the gender');
        
         $('#boy').text('Boy');
-        $('#boy').css('color','#7fffd4');
+        $('#boy').css('color','#7FB1ED');
         $('#or').show();
         $('#girl').show();
 
@@ -147,12 +162,14 @@
         var scratchers = [];
         var pct3,pct4,pct5=0;
         var i, i1;
-        if (window.confirm('This scratch off contains loud sound when the gender is revealed. Do you want to continue with sound? (Ok:with sound, Cancel:without sound')) {
+        if (window.confirm('This scratch off contains sound when the gender is revealed. Do you want to continue with sound? (Ok:with sound, Cancel:without sound')) {
             nosound=false;
           } else {
             nosound=true;
         }
+
         //var surname = searchParams.get('surname');
+        $("baby").text = params.surname;
         // called each time a scratcher loads
         function onScratcherLoaded(ev) {
             
