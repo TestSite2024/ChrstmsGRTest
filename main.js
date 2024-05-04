@@ -37,7 +37,7 @@
             $('#or').hide();
             $('#girl').hide();
             //document.getElementById("title").style.color = "#F860AA";
-            document.getElementsByTagName("body")[0].style.backgroundImage = 'repeating-linear-gradient(90deg, #ff95c8, #FFFFFF)';
+            document.getElementsByTagName("body")[0].style.backgroundImage = 'repeating-linear-gradient(90deg, #ff95c8, #fcc1de)';
             //document.getElementsByTagName("body")[0].style.backgroundImage.animation = 'gradient 15s ease infinite';
             document.getElementById("title").style.fontSize = "17vmin";
             $('#H3').hide();
@@ -83,7 +83,7 @@
         var duration = 10 * 1000;
         var end = Date.now() + duration;
         var defaults = { startVelocity: 10, spread: 360, ticks: 70, zIndex: 0 };
-        var particleCount = 5;
+        var particleCount = 5 * (end-Date.now())/duration;
         (function frame() {
         // launch a few confetti from the left edge
         confetti({...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#FFFFFF']}
@@ -102,28 +102,7 @@
         $("#resetbutton").show();
         //onResetClicked(scratchers);
         }());
-        /* var duration = 10 * 1000;
-        var animationEnd = Date.now() + duration;
-        var defaults = { startVelocity: 10, spread: 360, ticks: 70, zIndex: 0 };
-
-        interval = setInterval(()=> {
-        var timeLeft = animationEnd - Date.now();
-
-        if (timeLeft <= 0) {
-            console.log("triggered");
-
-            $("#resetbutton").show();
-            //onResetClicked(scratchers);
-            audio.stop();
-            clearInterval(interval);
-            return 
-        }
-
-        var particleCount = 50 * (timeLeft / duration);
-        // since particles fall down, start a bit higher than random
-        confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#FDB3FD']});
-        confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },colors: ['#FDB3FD'] });
-        }, 250); */
+     
          
     };
     /**
@@ -142,7 +121,7 @@
         //$("#scratcher3Pct").html('Find the gender');
        
         $('#boy').text('Boy');
-        $('#boy').css('color','#7fffd4');
+        $('#boy').css('color','#7FB1ED');
         $('#or').show();
         $('#girl').show();
 
@@ -150,7 +129,7 @@
         document.getElementById("title").style.fontSize = "15vmin";
 
 
-        document.getElementsByTagName("body")[0].style.backgroundImage = 'repeating-linear-gradient(90deg, #ff95c8, #7fffd4)';
+        document.getElementsByTagName("body")[0].style.backgroundImage = 'repeating-linear-gradient(90deg, #ff95c8, #7FB1ED)';
 
         $('#H3').show();
         $('#H4').show();
