@@ -54,27 +54,24 @@ text-shadow: 4px 6px #FFFFFF;
 } 
 .pagetop h3 {
 font-family: "Indie Flower", cursive;
-display:lex;
 font-style: normal;
 flex-direction: column;
-font-size:6vmin;
-white-space: normal;
+font-size:5vmin;
 text-align: center;
 } 
 .pagetop h4 {
-  font-family: "sans-serif", cursive;
+  font-family: "Roboto", sans-serif;
   display:flex;
-  font-weight: 0;
+  font-weight: 400;
   color: #ffffff;
   flex-direction: column;
-  font-size: 4vmin;
+  font-size: 3vmin;
   text-align: center;
   white-space:normal;
   } 
   .tabletop h4 {
-    font-family: "sans-serif", cursive;
-    display:flex;
-    font-weight: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     color: #ffffff;
     flex-direction: column;
     font-size:4vmin;
@@ -117,12 +114,6 @@ margin: 5px 5px 5px 5px;
 cursor: grab;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 #resetbutton {
 background-color: #04AA6D; /* Green */
 border: none;
