@@ -13,6 +13,7 @@
     var triggered=false;
     var nosound=true;
     var params = new URLSearchParams(window.location.search.slice(1));
+    var pct3,pct4,pct5=0;
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
     };
@@ -147,7 +148,6 @@
     function initPage() {
         var scratcherLoadedCount = 0;
         var scratchers = [];
-        var pct3,pct4,pct5=0;
         var i, i1;
         if (window.confirm('This scratch off contains sound when the gender is revealed. Do you want to continue with sound? (Ok:with sound, Cancel:without sound')) {
             nosound=false;
