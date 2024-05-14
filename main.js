@@ -39,9 +39,9 @@
             $('#or').hide();
             $('#girl').hide();
             //document.getElementById("title").style.color = "#F860AA";
-            document.getElementsByTagName("body")[0].style.backgroundImage = 'repeating-linear-gradient(90deg, #ff95c8, #fcc1de)';
+            document.getElementsByTagName("body")[0].style.backgroundImage = 'linear-gradient(90deg, #ff95c8, #fcc1de)';
             //document.getElementsByTagName("body")[0].style.backgroundImage.animation = 'gradient 15s ease infinite';
-            document.getElementById("title").style.fontSize = "17vmin";
+            document.getElementById("title").style.fontSize = "calc(5rem + 4.5vw)";
             $('#H3').hide();
             $('#H4').hide();
             $('#scratcher3Pct').hide();
@@ -129,10 +129,10 @@
         $('#girl').show();
 
         //document.getElementById("title").style.color = "#000000";
-        document.getElementById("title").style.fontSize = "15vmin";
+        document.getElementById("title").style.fontSize = "calc(4rem + 4.5vw)";
 
 
-        document.getElementsByTagName("body")[0].style.backgroundImage = 'repeating-linear-gradient(90deg, #ff95c8, #7FB1ED)';
+        document.getElementsByTagName("body")[0].style.backgroundImage = 'linear-gradient(90deg, #ff95c8, #7FB1ED)';
 
         $('#H3').show();
         $('#H4').show();

@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&display=swap" rel="stylesheet">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -58,6 +58,11 @@
  
   
 		<table id="table1" style="margin-left: auto; margin-right: auto;margin-top: auto; margin-bottom: auto;">
+      
+      <tr> <td colspan="3"><input type="button" id="resetbutton" value="Start Again!"></input></td>
+      </tr>
+      <tr><td colspan="3"><div class="tabletop"><h4 id="scratcher3Pct">Find the gender</h4>
+      </div></td></tr>
       <tr><td><canvas id="scratcher1" class="demo-canvas shadow1light" width="100%" height="100%"></canvas>
       </td>
       <td><canvas id="scratcher2"  width="100%" height="100%"></canvas>
@@ -79,10 +84,7 @@
       </table>
 	<br>
   <br>
-  <div class="tabletop"><h4 style="display: none;" id="scratcher3Pct">Find the gender</h4>
-  </div>
-  <br>
-  <input type="button" style="display: none" id="resetbutton" value="Start Again!"></input>
+  
 </div> <!-- #canvas-box -->
 <!-- End scratcher -->
 <div hidden id="lamebrowser">
