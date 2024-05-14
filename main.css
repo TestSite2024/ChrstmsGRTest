@@ -55,7 +55,7 @@ font-family: "Pacifico", cursive;
 display:inline-flexbox;
 font-weight: 400;
 flex-direction: column;
-font-size:5rem;
+font-size: calc(4rem + 4.5vw);
 text-align: center;
 text-shadow: 4px 6px #FFFFFF;
 } 
