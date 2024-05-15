@@ -132,7 +132,7 @@
         //document.getElementById("title").style.color = "#000000";
 
 
-        document.getElementsByTagName("body")[0].style.backgroundImage = 'url(../images/background.jpg)';
+        document.getElementsByTagName("body")[0].style.backgroundImage = 'url(images/background.jpg)';
 
         $('#H3').show();
         $('#H4').show();
