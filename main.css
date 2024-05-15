@@ -13,12 +13,21 @@ html {
 }
 body {
   height: 100vh;
-  background:  linear-gradient(90deg, #ff95c8, #7FB1ED);
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  /**background:  linear-gradient(90deg, #ff95c8, #7FB1ED);
   background-size: 100% 200%;
-  margin: auto;
+  /**margin: auto;
   width: 100vh;
   max-width: 100vw;
-  min-width: 400px;
+  min-width: 400px;*/
 }
 @keyframes gradient {
 	0% {
@@ -31,18 +40,15 @@ body {
 		background-position: 0% 50%;
 	}
 }
-table { 
-  table-layout:fixed;
-  transform: translate(0%, 50%);
-  top: 75%;
-  left: 10%;
-}
-@media only screen and (max-width: 600px) {
-/* horizontal scrollbar for tables if mobile screen */
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
 .tablemobile {
-    overflow-x: auto;
+    overflow-x: hidden;
     display: block;
 }
+}
+.bimage {
+
 }
 .pacifico-regular {
 font-family: "Pacifico", cursive;
@@ -52,10 +58,10 @@ font-style: normal;
 
 .pagetop h1 {
 font-family: "Pacifico", cursive;
-display:inline-flexbox;
+display:flexbox;
 font-weight: 400;
 flex-direction: column;
-font-size: calc(4rem + 4.5vw);
+font-size: calc(4rem + 1vw);
 text-align: center;
 text-shadow: 4px 6px #FFFFFF;
 } 
@@ -70,7 +76,7 @@ text-align: center;
   font-family: "Roboto", sans-serif;
   display:flex;
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
   flex-direction: column;
   font-size: 3vmin;
   text-align: center;
@@ -89,12 +95,17 @@ text-align: center;
   align-content: center;
   height:22em;
   position:absolute;
-  transform: translate(-50%, -70%);
-  top: 60%;
+  transform: translate(-50%, -50%);
+  top: 70%;
   left: 50%;
   border-radius: 5%;
 }
-
+table { 
+  table-layout:fixed;
+  /**transform: translate(0%, 50%);
+  top: 75%;
+  left: 10%;*/
+}
 
 .scratcher-bottom-margin h4 {
   font-family: "Sans", cursive;
@@ -120,15 +131,12 @@ cursor: grab;
 #resetbutton {
 background-color: #04AA6D; /* Green */
 border: none;
-padding: 15px 32px;
+padding: 10px 20px;
 color: #ffffff;
 border-radius:1cap;
 text-align: center;
 text-decoration: none;
-display: inline-block;
+display:block;
 font-size: 2vh;
-margin: 0;
-top: 50%;
-left: 50%;
-transform: translate(50%, -50%);
+margin: auto;
 }
