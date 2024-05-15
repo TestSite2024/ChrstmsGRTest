@@ -3,17 +3,21 @@
  *
  * depends on jQuery>=1.7
  */
+
 (function() {
     /**
      * Returns true if this browser supports canvas
      *
      * From http://diveintohtml5.info/
      */
+
+
     var audio = new Audio('audio/celebrate.mp3');
     var triggered=false;
     var nosound=true;
     var params = new URLSearchParams(window.location.search.slice(1));
     var pct3,pct4,pct5=0;
+
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
     };
@@ -22,12 +26,14 @@
      * Handle scratch event on a scratcher
      */
     function checkpct() {
+        
         if (pct3>0 && pct4>0 && pct5>0)  {
             if (pct3<20 || pct4<20 || pct5<20)  {
 
             //$('#scratcher3Pct').html('It is a girl!');
-            $("#scratcher3Pct").show();
-            document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
+            //$("#scratcher3Pct").show();
+            //document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
+            CrispyToast.success('Scratch MORE!',{ position: 'bottom-center' },{timeout: 1500});
             } 
         }
         if (pct3>20 && pct4>20 && pct5>20) {

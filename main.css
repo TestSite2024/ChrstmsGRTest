@@ -47,9 +47,7 @@ body {
     display: block;
 }
 }
-.bimage {
 
-}
 .pacifico-regular {
 font-family: "Pacifico", cursive;
 font-weight: 400;
@@ -85,7 +83,7 @@ text-align: center;
   .tabletop h4 {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    color: #ffffff;
+    color: #000000;
     flex-direction: column;
     font-size:4vmin;
     text-align: center;
@@ -129,14 +127,24 @@ cursor: grab;
 }
 
 #resetbutton {
-background-color: #04AA6D; /* Green */
+background-color: #f85fa9; /* Green */
 border: none;
 padding: 10px 20px;
-color: #ffffff;
+color: #FFFFFF;
+cursor: pointer;
+transition: all 200ms ease-in-out;
+transition-duration: 200ms;
+transition-timing-function: ease-in-out;
+transition-delay: 0s;
 border-radius:1cap;
 text-align: center;
 text-decoration: none;
 display:block;
 font-size: 2vh;
 margin: auto;
+}
+#resetbutton:hover {
+  color: #000000;
+  background:snow ;
+  border: 1px solid transparent;
 }
