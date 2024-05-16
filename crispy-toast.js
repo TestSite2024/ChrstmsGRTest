@@ -1,7 +1,7 @@
 // crispy-toast.js
 
 var CrispyToast = {};
-
+var Timer;
 CrispyToast.toasts = [];
 
 CrispyToast.createToast = function(message, options) {
@@ -17,6 +17,18 @@ CrispyToast.createToast = function(message, options) {
 
   CrispyToast.renderToast(toast);
 };
+CrispyToast.clearall = function() {
+  if (Timer !=null) {
+    return true;
+  }
+  var toastElements = document.querySelectorAll('.crispy-toast');
+  if (toastElements.length > 0) {
+    console.log('clear');
+    toastElements.forEach(function(element) {
+      document.body.removeChild(element);
+    });
+  }
+}
 CrispyToast.renderToast = function(toast) {
   var toastContainer = document.createElement('div');
   toastContainer.className = 'crispy-toast ' + toast.type + ' ' + toast.position;
@@ -29,8 +41,9 @@ CrispyToast.renderToast = function(toast) {
 
   document.body.appendChild(toastContainer);
 
-  setTimeout(function() {
+  Timer = setTimeout(function() {
     CrispyToast.removeToast(toast);
+    Timer=null;
   }, toast.timeout);
 };
 
@@ -72,3 +85,4 @@ CrispyToast.error = function(message, options) {
 
 // Attach CrispyToast to the global object (window)
 window.CrispyToast = CrispyToast;
+

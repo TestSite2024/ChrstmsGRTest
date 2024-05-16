@@ -33,7 +33,9 @@
             //$('#scratcher3Pct').html('It is a girl!');
             //$("#scratcher3Pct").show();
             //document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
-            CrispyToast.success('Scratch MORE!',{ position: 'bottom-center' },{timeout: 1500});
+            if (!CrispyToast.clearall()){
+                CrispyToast.success('Scratch MORE!',{ position: 'top-center' },{timeout: 3000});
+                }
             } 
         }
         if (pct3>20 && pct4>20 && pct5>20) {
