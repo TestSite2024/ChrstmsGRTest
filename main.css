@@ -114,6 +114,9 @@ table {
 #scratcher1, #scratcher2, #scratcher3, #scratcher4, #scratcher5, #scratcher6, #scratcher7, #scratcher8, #scratcher9 {
   width: 100%;
   padding: 5px;
+  border: 1px;
+    border-color: #000000;
+    border-style: solid;
 }
 
 .scratcher-bottom-margin h4 {

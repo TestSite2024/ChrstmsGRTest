@@ -118,7 +118,7 @@ Scratcher = (function() {
         if (!stride || stride < 1) { stride = 1; }
     
         stride *= 4; // 4 elements per pixel
-    
+        
         pixels = ctx.getImageData(0, 0, can.width, can.height);
         pdata = pixels.data;
         l = pdata.length; // 4 entries per pixel
@@ -210,6 +210,7 @@ Scratcher = (function() {
     Scratcher.prototype.scratchLine = function(x, y, fresh) {
         var can = this.canvas.draw;
         var ctx = can.getContext('2d');
+        can.getContext("2d", { willReadFrequently: true });
         ctx.lineWidth = 10;
         ctx.lineCap = ctx.lineJoin = 'round';
         ctx.strokeStyle = '#f00'; // can be any opaque color

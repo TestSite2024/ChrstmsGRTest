@@ -91,7 +91,7 @@ html {
     height:25em;
     position:absolute;
     transform: translate(0%, 0%);
-    /*background-color: #FFFFFF;*/
+    /* background-color: #FFFFFF; */
     top: 10%;
     left: 0%;
     border-radius: 5%;
@@ -116,7 +116,11 @@ html {
   #scratcher-box canvas {
   cursor: grab;
   }
-
+  #scratcher1, #scratcher2, #scratcher3, #scratcher4, #scratcher5, #scratcher6, #scratcher7, #scratcher8, #scratcher9 {
+    width: 100%;
+    padding: 5px;
+    
+  }
   #resetbutton {
   border: none;
   padding: 10px 20px;
