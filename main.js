@@ -152,53 +152,53 @@
     /**
      * Assuming canvas works here, do all initial page setup
      */
-    function handleOrientationChange(mql) {
-        if (mql.matches) {
-            /* The viewport is currently in portrait orientation */
-            if(window.innerHeight>900) {
-                size=130}
-            else {
-                size=100;
-            }
+    // function handleOrientationChange(mql) {
+    //     if (mql.matches) {
+    //         /* The viewport is currently in portrait orientation */
+    //         if(window.innerHeight>900) {
+    //             size=130}
+    //         else {
+    //             size=100;
+    //         }
  
-          } else {
-            /* The viewport is not currently in portrait orientation, therefore landscape */
-            console.log(window.innerHeight + " " + window.innerWidth);
-            size=100;
-            if (window.innerWidth>900 && window.innerWidth>window.innerHeight*1.2){
-                console.log("yes");
-                size = 130;
-            }
-          }
+    //       } else {
+    //         /* The viewport is not currently in portrait orientation, therefore landscape */
+    //         console.log(window.innerHeight + " " + window.innerWidth);
+    //         size=100;
+    //         if (window.innerWidth>900 && window.innerWidth>window.innerHeight*1.2){
+    //             console.log("yes");
+    //             size = 130;
+    //         }
+    //       }
           
-          $('#scratcher1').width(size);
-          $('#scratcher1').css('width',size);
+    //       $('#scratcher1').width(size);
+    //       $('#scratcher1').css('width',size);
 
-          $('#scratcher2').width(size);
-          $('#scratcher2').css('width',size);
+    //       $('#scratcher2').width(size);
+    //       $('#scratcher2').css('width',size);
 
-          $('#scratcher3').width(size);
-          $('#scratcher3').css('width',size);
+    //       $('#scratcher3').width(size);
+    //       $('#scratcher3').css('width',size);
 
-          $('#scratcher4').width(size);
-          $('#scratcher4').css('width',size);
+    //       $('#scratcher4').width(size);
+    //       $('#scratcher4').css('width',size);
 
-          $('#scratcher5').width(size);
-          $('#scratcher5').css('width',size);
+    //       $('#scratcher5').width(size);
+    //       $('#scratcher5').css('width',size);
 
-          $('#scratcher6').width(size);
-          $('#scratcher6').css('width',size);
+    //       $('#scratcher6').width(size);
+    //       $('#scratcher6').css('width',size);
 
-          $('#scratcher7').width(size);
-          $('#scratcher7').css('width',size);
+    //       $('#scratcher7').width(size);
+    //       $('#scratcher7').css('width',size);
 
-          $('#scratcher8').width(size);
-          $('#scratcher8').css('width',size);
+    //       $('#scratcher8').width(size);
+    //       $('#scratcher8').css('width',size);
 
-          $('#scratcher9').width(size); 
-          $('#scratcher9').css('width',size);
+    //       $('#scratcher9').width(size); 
+    //       $('#scratcher9').css('width',size);
 
-      }
+    //   }
     function initPage() {
         var scratcherLoadedCount = 0;
         var scratchers = [];
@@ -208,9 +208,9 @@
           } else {
             nosound=true;
         }
-        const mediaQueryList = window.matchMedia("(orientation: portrait)");
-        mediaQueryList.addEventListener("change", handleOrientationChange);
-        handleOrientationChange(mediaQueryList);
+        // const mediaQueryList = window.matchMedia("(orientation: portrait)");
+        // mediaQueryList.addEventListener("change", handleOrientationChange);
+        // handleOrientationChange(mediaQueryList);
         
            
         //console.log(params.surname);
