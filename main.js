@@ -11,7 +11,17 @@
      * From http://diveintohtml5.info/
      */
 
-
+    var color1 = '#ff95c8';
+    var color2 = '#5194f8';
+    var colortxt1 = '#F860AA';
+    var colortxt2= '#7FB1ED';
+    var color =color2;
+    //Select the color
+    var colortxt = colortxt2;
+    var gendertext1 = "It is a Girl!";
+    var gendertext2 = "It is a Boy!";
+    //Select the gender text
+    var gendertext = gendertext2;
     var audio = new Audio('audio/celebrate.mp3');
     var triggered=false;
     var nosound=true;
@@ -29,9 +39,6 @@
         
         if (pct3>0 && pct4>0 && pct5>0)  {
             if (pct3<20 || pct4<20 || pct5<20)  {
-
-            //$('#scratcher3Pct').html('It is a girl!');
-            //$("#scratcher3Pct").show();
             //document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
             if (!CrispyToast.clearall()){
                 CrispyToast.success('Scratch MORE!',{ position: 'top-center' },{timeout: 3000});
@@ -39,15 +46,11 @@
             } 
         }
         if (pct3>20 && pct4>20 && pct5>20) {
-            $('#boy').text('It is a girl!');
-            $('#boy').css('color','#F860AA');
-
-            //document.getElementById("boy").style.color('#F860AA');
-
+            $('#boy').text(gendertext);
+            $('#boy').css('color',colortxt);
             $('#or').hide();
             $('#girl').hide();
-            //document.getElementById("title").style.color = "#F860AA";
-            document.getElementsByTagName("body")[0].style.backgroundColor = '#ff95c8';
+            document.getElementsByTagName("body")[0].style.backgroundColor = color;
             document.getElementsByTagName("body")[0].style.backgroundImage = 'none';
 
             //document.getElementsByTagName("body")[0].style.backgroundImage.animation = 'gradient 15s ease infinite';
@@ -109,9 +112,8 @@
             
             return;
         }
-        console.log("triggered");
         $("#resetbutton").show();
-        //onResetClicked(scratchers);
+        
         }());
      
          
@@ -130,15 +132,11 @@
         for (i = 0; i < scratchers.length; i++) {
             scratchers[i].reset();
         }
-        //$("#scratcher3Pct").html('Find the gender');
        
         $('#boy').text('Boy');
-        $('#boy').css('color','#7FB1ED');
+        $('#boy').css('color',colortxt2);
         $('#or').show();
         $('#girl').show();
-
-        //document.getElementById("title").style.color = "#000000";
-
 
         document.getElementsByTagName("body")[0].style.backgroundImage = 'url(images/background.jpg)';
 
@@ -153,6 +151,32 @@
     /**
      * Assuming canvas works here, do all initial page setup
      */
+    function handleOrientationChange(mql) {
+        if (mql.matches) {
+            /* The viewport is currently in portrait orientation */
+            $('#scratcher1').width(100);
+            $('#scratcher2').width(100);
+            $('#scratcher3').width(100);
+            $('#scratcher4').width(100);
+            $('#scratcher5').width(100);
+            $('#scratcher6').width(100);
+            $('#scratcher7').width(100);
+            $('#scratcher8').width(100);
+            $('#scratcher9').width(100);
+
+          } else {
+            /* The viewport is not currently in portrait orientation, therefore landscape */
+            $('#scratcher1').width(120);
+            $('#scratcher2').width(120);
+            $('#scratcher3').width(120);
+            $('#scratcher4').width(120);
+            $('#scratcher5').width(120);
+            $('#scratcher6').width(120);
+            $('#scratcher7').width(120);
+            $('#scratcher8').width(120);
+            $('#scratcher9').width(120);
+          }
+      }
     function initPage() {
         var scratcherLoadedCount = 0;
         var scratchers = [];
@@ -162,14 +186,19 @@
           } else {
             nosound=true;
         }
+        const mediaQueryList = window.matchMedia("(orientation: portrait)");
+        mediaQueryList.addEventListener("change", handleOrientationChange);
 
+        
+           
         //console.log(params.surname);
         if (params.get('surname') != null) {
             $("#baby").text('baby ' + params.get('surname')+'!');}
         else {
             $("#baby").text('the baby!');
         }
-        
+        document.getElementById("resetbutton").style.backgroundColor = colortxt;
+
         // called each time a scratcher loads
         function onScratcherLoaded(ev) {
             

@@ -61,7 +61,7 @@ html {
   display: block;
   font-style: normal;
   flex-direction: column;
-  font-size:5vmin;
+  font-size:4vmin;
   text-align: right;
   padding-right: 10%;
   } 
@@ -71,7 +71,7 @@ html {
     font-weight: 400;
     color: #000000;
     flex-direction: column;
-    font-size: 3vmin;
+    font-size: 2.5vmin;
     text-align: right;
     white-space:normal;
     padding-right: 10%;
@@ -86,11 +86,12 @@ html {
       padding-right: 10%;
       } 
   #scratcher-box {
-    width:22em;
+    width:25em;
     align-content: left;
-    height:22em;
+    height:25em;
     position:absolute;
     transform: translate(0%, 0%);
+    /*background-color: #FFFFFF;*/
     top: 10%;
     left: 0%;
     border-radius: 5%;
@@ -112,19 +113,11 @@ html {
   margin: 15px 10px;
   }
   
-  #bottom-text-area {
-  margin: 15px 0;
-  font-size: 85%;
-  }
-  
   #scratcher-box canvas {
-  
-  margin: 5px 5px 5px 5px;
   cursor: grab;
   }
-  
+
   #resetbutton {
-  background-color: #f85fa9; /* Green */
   border: none;
   padding: 10px 20px;
   color: #FFFFFF;
@@ -142,7 +135,7 @@ html {
   }
   #resetbutton:hover {
     color: #000000;
-    background:snow ;
+    background:snow!important;
     border: 1px solid transparent;
   }
   
