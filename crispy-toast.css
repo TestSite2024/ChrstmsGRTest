@@ -43,6 +43,11 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.toast-message {
+  white-space: pre-wrap;
+  overflow:clip;
+}
+
 .crispy-toast.message {
   background-color: var(--light-blue);
   color: var(--dark-blue);
@@ -60,7 +65,9 @@
 
 .crispy-toast.warning {
   background-color: var(--light-orange);
+  white-space:pre-line;
   color: var(--dark-orange);
+  font-weight: 100;
 }
 .crispy-toast.error {
   background-color: var(--light-red);

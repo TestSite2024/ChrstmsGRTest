@@ -33,7 +33,7 @@ html {
     max-width: 100vw;
     min-width: 400px;*/
   }
-  @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  @media only screen and (prefers-color-scheme: dark), (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   .tablemobile {
       overflow-x: hidden;
       display: block;
@@ -57,25 +57,34 @@ html {
   text-shadow: 4px 6px #FFFFFF;
   } 
   .pagetop h3 {
-  font-family: "Indie Flower", cursive;
+  font-family: "Roboto",sans-serif;
   display: block;
   font-style: normal;
   flex-direction: column;
   font-size:4vmin;
   text-align: right;
-  padding-right: 10%;
+  padding-right: 1%;
+  font-weight: 200;
+
   } 
   .pagetop h4 {
     font-family: "Roboto", sans-serif;
-    display:flex;
+    display:inline;
     font-weight: 400;
     color: #000000;
-    flex-direction: column;
     font-size: 2.5vmin;
     text-align: right;
-    white-space:normal;
-    padding-right: 10%;
-    } 
+    /* position: absolute;
+    right: 50%;
+    transform: translateX(100%);
+    white-space:pre-wrap; */
+    float:right;
+    }
+    h4 span {
+      /*white-space:pre-wrap;*/
+      background-color: #FFFFFF;
+
+    }
     .tabletop h4 {
       font-family: "Roboto", sans-serif;
       font-weight: 400;
@@ -109,9 +118,6 @@ html {
     font-weight:2vmin;
     text-align: center;
     } 
-  #text-area {
-  margin: 15px 10px;
-  }
   
   #scratcher-box canvas {
   cursor: grab;
@@ -142,4 +148,6 @@ html {
     background:snow!important;
     border: 1px solid transparent;
   }
-  
+  #baby{
+    font-weight: 600;
+  }

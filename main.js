@@ -27,7 +27,7 @@
     var triggered=false;
     var nosound=true;
     var params = new URLSearchParams(window.location.search.slice(1));
-    var pct3,pct4,pct5=0;
+    var pct1=0, pct2=0, pct3=0, pct4=0, pct5=0, pct6 = 0;
 
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
@@ -39,14 +39,19 @@
     function checkpct() {
         
         if (pct3>0 && pct4>0 && pct5>0)  {
-            if (pct3<20 || pct4<20 || pct5<20)  {
+            if (pct3<15 || pct4<15 || pct5<15)  {
             //document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
             if (!CrispyToast.clearall()){
                 CrispyToast.success('Scratch MORE!',{ position: 'top-center' },{timeout: 3000});
                 }
             } 
         }
-        if (pct3>20 && pct4>20 && pct5>20) {
+        if ((pct1>15 && pct2>15 && pct6>15)&&(pct3<15||pct4<15||pct5<15)) {
+            if (!CrispyToast.clearall()&&!triggered){
+                CrispyToast.error('Scratch other circles. You didnt find the gender yet!',{ position: 'top-center' },{timeout: 6000});
+                }
+        } 
+        if (pct3>15&& pct4>15 && pct5>15) {
             $('#boy').text(gendertext);
             $('#boy').css('color',colortxt);
             $('#or').hide();
@@ -62,6 +67,14 @@
             confetti_effect();
         }
     };
+    function scratcher1Changed(ev) {
+        pct1 = (this.fullAmount(40) * 100)|0;
+        checkpct();
+    };
+    function scratcher2Changed(ev) {
+        pct2 = (this.fullAmount(40) * 100)|0;
+        checkpct();
+    };
     function scratcher3Changed(ev) {
         // Test every pixel. Very accurate, but might be slow on large
         // canvases on underpowered devices:
@@ -70,17 +83,21 @@
         // Only test every 32nd pixel. 32x faster, but might lead to
         // inaccuracy:
 
-        pct3 = (this.fullAmount(32) * 100)|0;
+        pct3 = (this.fullAmount(40) * 100)|0;
         checkpct();
         
     };
     function scratcher4Changed(ev) {
-        pct4 = (this.fullAmount(32) * 100)|0;
+        pct4 = (this.fullAmount(40) * 100)|0;
         checkpct();
     };
     function scratcher5Changed(ev) {
-        pct5 = (this.fullAmount(32) * 100)|0;
+        pct5 = (this.fullAmount(40) * 100)|0;
        checkpct();
+    };
+    function scratcher6Changed(ev) {
+        pct6 = (this.fullAmount(40) * 100)|0;
+        checkpct();
     };
     function randomInRange(min, max) {
         return Math.random() * (max - min) + min;
@@ -125,9 +142,12 @@
      */
     function onResetClicked(scratchers) {
         var i;
+        pct1=0;
+        pct2=0;
         pct3=0;
         pct4=0;
         pct5=0;
+        pct6=0;
         $("#scratcher3Pct").hide();
         $("#resetbutton").hide();
         for (i = 0; i < scratchers.length; i++) {
@@ -174,30 +194,7 @@
     //       $('#scratcher1').width(size);
     //       $('#scratcher1').css('width',size);
 
-    //       $('#scratcher2').width(size);
-    //       $('#scratcher2').css('width',size);
-
-    //       $('#scratcher3').width(size);
-    //       $('#scratcher3').css('width',size);
-
-    //       $('#scratcher4').width(size);
-    //       $('#scratcher4').css('width',size);
-
-    //       $('#scratcher5').width(size);
-    //       $('#scratcher5').css('width',size);
-
-    //       $('#scratcher6').width(size);
-    //       $('#scratcher6').css('width',size);
-
-    //       $('#scratcher7').width(size);
-    //       $('#scratcher7').css('width',size);
-
-    //       $('#scratcher8').width(size);
-    //       $('#scratcher8').css('width',size);
-
-    //       $('#scratcher9').width(size); 
-    //       $('#scratcher9').css('width',size);
-
+    
     //   }
     function initPage() {
         var scratcherLoadedCount = 0;
@@ -259,12 +256,15 @@
         // (These aren't "real" event listeners; they're implemented on top
         // of Scratcher.)
         //scratchers[3].addEventListener('reset', scratchersChanged);
+        scratchers[0].addEventListener('scratchesended', scratcher1Changed);
+        scratchers[1].addEventListener('scratchesended', scratcher2Changed);
         scratchers[3].addEventListener('scratchesended', scratcher3Changed);
         //scratchers[4].addEventListener('reset', scratchersChanged);
         scratchers[4].addEventListener('scratchesended', scratcher4Changed);
         //scratchers[5].addEventListener('reset', scratchersChanged);
         scratchers[5].addEventListener('scratchesended', scratcher5Changed);
-    
+        scratchers[6].addEventListener('scratchesended', scratcher6Changed);
+
         // Or if you didn't want to do it every scratch (to save CPU), you
         // can just do it on 'scratchesended' instead of 'scratch':
         //scratchers[2].addEventListener('scratchesended', scratcher3Changed);
