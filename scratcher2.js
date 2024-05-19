@@ -20,9 +20,9 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-var disabled=false;
 
 Scratcher = (function() {
+
     /**
      * Helper function to extract the coordinates from an event, whether the
      * event is a mouse or touch.
@@ -111,7 +111,7 @@ Scratcher = (function() {
     Scratcher.prototype.fullAmount = function(stride) {
         var i, l;
         var can = this.canvas.draw;
-        var ctx = can.getContext('2d');
+        var ctx = can.getContext("2d", { willReadFrequently: true });
         var count, total;
         var pixels, pdata;
     
@@ -251,9 +251,9 @@ Scratcher = (function() {
             this.mouseDown = true;
             this.scratchLine(local.x, local.y, true);
             this.recompositeCanvases();
-    
+            
             this.dispatchEvent(this.createEvent('scratchesbegan'));
-    
+            
             return false;
         };
     

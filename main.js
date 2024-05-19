@@ -23,7 +23,7 @@
     var gendertext2 = "It is a Boy!";
     //Select the gender text
     var gendertext = gendertext1;
-    
+    var surname;
     var soundHandle = new Audio();
     var triggered=false;
     var nosound=true;
@@ -203,40 +203,63 @@
         var scratcherLoadedCount = 0;
         var scratchers = [];
         var i, i1;
-        $(document).ready(function() {
-        addEventListener('mousedown', function (e) {
-          if (soundHandle.currentTime!=0) {return;}
-            soundHandle =     document.getElementById('soundHandle');  
-            soundHandle.autoplay = true;
-            soundHandle.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
-            soundHandle.src = 'audio/celebrate.mp3';
-            soundHandle.play();
-            soundHandle.pause();
-            });
-         });
-        if (window.confirm('This scratch off contains sound when the gender is revealed. Do you want to continue with sound? (Ok:with sound, Cancel:without sound')) {
-            nosound=false;
-          } else {
-            nosound=true;
+        
+        // if (window.confirm('This scratch off contains sound when the gender is revealed. Do you want to continue with sound? (Ok:with sound, Cancel:without sound')) {
+        //     nosound=false;
+        //   } else {
+        //     nosound=true;
+        // }
+        surname = params.get('surname');
+        if (surname !=null && surname.replace(/\s/g, '').length) {
+            $("#baby").text('baby ' + surname+'!');}
+        else {
+            $("#baby").text('the baby!');
+            surname="the";
         }
-        $(document).ready(function() {
-            addEventListener('beforeunload', function (e) {
-                soundHandle.pause();
-                soundHandle.currentTime=0;
-            });
+
+        document.getElementById('intro').innerHTML= "This is a gender reveal scratch off for <strong>" + surname + " family</strong>. It contains sound when the gender is revealed. Do you want to continue with sound?";
+        document.getElementById('id01').style.display='block';
+        $('.nosoundbtn').on("click", function (e) {
+            document.getElementById('id01').style.display='none';
+            nosound=true;
         });
+        $('.withsoundbtn').on("click", function (e) {
+            document.getElementById('id01').style.display='none';
+            nosound=false;
+            if (soundHandle.currentTime!=0) {return;}
+                soundHandle = document.getElementById('soundHandle');  
+                soundHandle.autoplay = true;
+                soundHandle.muted=false;
+                soundHandle.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
+                soundHandle.src = 'audio/celebrate.mp3';
+                soundHandle.play();
+                soundHandle.pause();
+        });
+        // $(document).on("load", function (e) {
+        //     if (soundHandle.currentTime!=0) {return;}
+        //       soundHandle =     document.getElementById('soundHandle');  
+        //       soundHandle.autoplay = true;
+        //       soundHandle.muted=false;
+        //       soundHandle.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
+        //       soundHandle.src = 'audio/celebrate.mp3';
+        //       soundHandle.play();
+        //       soundHandle.pause();
+        //       });
+        window.addEventListener(
+            "pagehide",
+            (event) => {
+              if (event.persisted) {
+                soundHandle.pause();
+                soundHandle.currentTime=0;              }
+            },
+            false,
+          );
         // const mediaQueryList = window.matchMedia("(orientation: portrait)");
         // mediaQueryList.addEventListener("change", handleOrientationChange);
         // handleOrientationChange(mediaQueryList);
         
            
-        //console.log(params.surname);
-        var surname = params.get('surname');
-        if (surname !=null && surname.replace(/\s/g, '').length) {
-            $("#baby").text('baby ' + surname+'!');}
-        else {
-            $("#baby").text('the baby!');
-        }
+        
         document.getElementById("resetbutton").style.backgroundColor = colortxt;
 
         // called each time a scratcher loads
