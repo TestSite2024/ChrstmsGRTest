@@ -109,6 +109,7 @@
             return;
         }
         if (!nosound) {
+            soundHandle.volume=0.5;
             soundHandle.play();
         }
         triggered=true;
