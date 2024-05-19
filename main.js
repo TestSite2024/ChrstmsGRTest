@@ -23,7 +23,8 @@
     var gendertext2 = "It is a Boy!";
     //Select the gender text
     var gendertext = gendertext1;
-    var audio = new Audio('audio/celebrate.mp3');
+    
+    var soundHandle = new Audio();
     var triggered=false;
     var nosound=true;
     var params = new URLSearchParams(window.location.search.slice(1));
@@ -32,6 +33,7 @@
     function supportsCanvas() {
         return !!document.createElement('canvas').getContext;
     };
+    
     
     /**
      * Handle scratch event on a scratcher
@@ -107,8 +109,7 @@
             return;
         }
         if (!nosound) {
-            audio.volume=0.5;
-            audio.play();
+            soundHandle.play();
         }
         triggered=true;
         // do this for 10 seconds
@@ -164,8 +165,8 @@
         $('#H3').show();
         $('#H4').show();
         triggered = false;
-        audio.pause();
-        audio.currentTime = 0;    
+        soundHandle.pause();
+        soundHandle.currentTime = 0;    
         return false;
     };
     
@@ -196,10 +197,20 @@
 
     
     //   }
+    
     function initPage() {
         var scratcherLoadedCount = 0;
         var scratchers = [];
         var i, i1;
+        soundHandle =     document.getElementById('soundHandle');
+        $(document).ready(function() {
+        addEventListener('touchstart', function (e) {
+          if (soundHandle.currentTime!=0) {return;}
+            soundHandle.src = 'audio/celebrate.mp3';
+          soundHandle.play();
+          soundHandle.pause();
+            });
+         });
         if (window.confirm('This scratch off contains sound when the gender is revealed. Do you want to continue with sound? (Ok:with sound, Cancel:without sound')) {
             nosound=false;
           } else {
