@@ -10,8 +10,10 @@ document.addEventListener("mousedown",function(e){
  
    if((target.contains(inputBtc) || target.contains(sharebtn)) && !inputLtc.value){
       //console.log("click");
-      window.confirm("Please enter a valid surname!");
-   }
+      window.alert("Please enter a valid surname!");
+      inputBtc.style.pointerEvents = "none";
+      sharebtn.disabled =true;
+   } 
 });
 var constantNumber = 2;
 
@@ -19,12 +21,17 @@ function OnKeyUp(e) {
    var result = inputLtc.value;
    if (result){
       result = add + result.charAt(0).toUpperCase() + result.slice(1);
+      sharebtn.disabled =false;
+      inputBtc.style.pointerEvents = "auto";
+
    } else {
       result=add;
+      sharebtn.disabled =true;
+      inputBtc.style.pointerEvents = "none";
+
    }
    inputBtc.textContent = result;
    inputBtc.href= result;
-   inputBtc.style.pointerEvents = "auto";
 };
 
 
@@ -34,7 +41,7 @@ $("#emailLinkbtn").on("click", function(){
    txt_surname = $("#Surname").val()
    $("#modalClose").trigger("click")
    var mail = document.createElement("a");
-   mail.href = `mailto:${txt_email}?subject=Your link for ${txt_surname}-baby scratcher&body=${txt_link}`;
+   mail.href = `mailto:${txt_email}?subject=Your link for ${txt_surname}-baby scratch off card&body=${txt_link}`;
    mail.click();
    alert(`The link ${txt_link} is sent to ${txt_email}`)
  })
