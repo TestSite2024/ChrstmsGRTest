@@ -204,7 +204,7 @@
         var scratchers = [];
         var i, i1;
         $(document).ready(function() {
-        addEventListener('touchstart', function (e) {
+        addEventListener('mousedown', function (e) {
           if (soundHandle.currentTime!=0) {return;}
             soundHandle =     document.getElementById('soundHandle');  
             soundHandle.autoplay = true;
@@ -219,6 +219,11 @@
           } else {
             nosound=true;
         }
+        $(document).ready(function() {
+            addEventListener('beforeunload', function (e) {
+                soundHandle.pause();
+                soundHandle.currentTime=0;
+            }
         // const mediaQueryList = window.matchMedia("(orientation: portrait)");
         // mediaQueryList.addEventListener("change", handleOrientationChange);
         // handleOrientationChange(mediaQueryList);
