@@ -45,12 +45,12 @@ body {
 	}
 }
 
-@media only screen and (prefers-color-scheme: dark), (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+/* @media only screen and (prefers-color-scheme: dark), (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
 .tablemobile {
     overflow-x: hidden;
     display: block;
 }
-}
+} */
 
 .pacifico-regular {
 font-family: "Pacifico", cursive;
@@ -71,6 +71,7 @@ text-shadow: 4px 6px #FFFFFF;
 font-family: "Roboto", sans-serif;
 flex-direction: column;
 font-size:5vmin;
+color: #000000 !important;
 text-align: center;
 font-weight: 400;
 } 

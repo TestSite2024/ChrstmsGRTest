@@ -1,153 +1,153 @@
 html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    padding: 0;
-    margin: 0;
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
-    white-space:nowrap;
-  }
-  body {
-    height: 100vh;
-    background-image: url(images/background.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100vh;
-    -webkit-text-size-adjust: none;
-     -moz-text-size-adjust: none;
-      -ms-text-size-adjust: none;
-          text-size-adjust: none;
-    /**background:  linear-gradient(90deg, #ff95c8, #7FB1ED);
-    background-size: 100% 200%;
-    /**margin: auto;
-    width: 100vh;
-    max-width: 100vw;
-    min-width: 400px;*/
-  }
-  @media only screen and (prefers-color-scheme: light), (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
-  .tablemobile {
-      overflow-x: hidden;
-      display: block;
-  }
-  }
-  
-  .pacifico-regular {
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
-  font-style: normal;
-  }
-  
-  .pagetop h1 {
-  font-family: "Pacifico", cursive;
-  display:flexbox;
-  font-weight: 400;
-  flex-direction: column;
-  font-size: calc(3rem + 0.9vw);
-  text-align: right;
-  padding-right: 10%;
-  text-shadow: 4px 6px #FFFFFF;
-  } 
-  .pagetop h3 {
-  font-family: "Roboto",sans-serif;
-  display: block;
-  font-style: normal;
-  flex-direction: column;
-  font-size:4vmin;
-  text-align: right;
-  padding-right: 1%;
-  font-weight: 200;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  white-space:nowrap;
+}
+body {
+  height: 100vh;
+  background-image: url(images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  -webkit-text-size-adjust: none;
+   -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+        text-size-adjust: none;
+  /**background:  linear-gradient(90deg, #ff95c8, #7FB1ED);
+  background-size: 100% 200%;
+  /**margin: auto;
+  width: 100vh;
+  max-width: 100vw;
+  min-width: 400px;*/
+}
+/* @media only screen and (prefers-color-scheme: light), (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+.tablemobile {
+    overflow-x: hidden;
+    display: block;
+}
+} */
 
-  } 
-  .pagetop h4 {
+.pacifico-regular {
+font-family: "Pacifico", cursive;
+font-weight: 400;
+font-style: normal;
+}
+
+.pagetop h1 {
+font-family: "Pacifico", cursive;
+display:flexbox;
+font-weight: 400;
+flex-direction: column;
+font-size: calc(3rem + 0.9vw);
+text-align: right;
+padding-right: 1%;
+text-shadow: 4px 6px #FFFFFF;
+} 
+.pagetop h3 {
+font-family: "Roboto",sans-serif;
+display: block;
+font-style: normal;
+flex-direction: column;
+font-size:4vmin;
+text-align: right;
+padding-right: 1%;
+font-weight: 200;
+
+} 
+.pagetop h4 {
+  font-family: "Roboto", sans-serif;
+  display:inline;
+  font-weight: 400;
+  color: #000000;
+  font-size: 2.5vmin;
+  text-align: right;
+  /* position: absolute;
+  right: 50%;
+  transform: translateX(100%);
+  white-space:pre-wrap; */
+  float:right;
+  }
+  h4 span {
+    /*white-space:pre-wrap;*/
+    background-color: #FFFFFF;
+
+  }
+  .tabletop h4 {
     font-family: "Roboto", sans-serif;
-    display:inline;
     font-weight: 400;
     color: #000000;
-    font-size: 2.5vmin;
+    flex-direction: column;
+    font-size:4vmin;
     text-align: right;
-    /* position: absolute;
-    right: 50%;
-    transform: translateX(100%);
-    white-space:pre-wrap; */
-    float:right;
-    }
-    h4 span {
-      /*white-space:pre-wrap;*/
-      background-color: #FFFFFF;
-
-    }
-    .tabletop h4 {
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
-      color: #000000;
-      flex-direction: column;
-      font-size:4vmin;
-      text-align: right;
-      padding-right: 10%;
-      } 
-  #scratcher-box {
-    width:25em;
-    align-content: left;
-    height:25em;
-    position:absolute;
-    transform: translate(0%, 0%);
-    /* background-color: #FFFFFF; */
-    top: 10%;
-    left: 0%;
-    border-radius: 5%;
-  }
-  table { 
-    table-layout:fixed;
-    /**transform: translate(0%, 50%);
-    top: 75%;
-    left: 10%;*/
-  }
-  
-  .scratcher-bottom-margin h4 {
-    font-family: "Sans", cursive;
-    display:flex;
-    font-weight:2vmin;
-    text-align: center;
+    padding-right: 10%;
     } 
-  
-  #scratcher-box canvas {
-  cursor: grab;
-  }
-  #scratcher1, #scratcher2, #scratcher3, #scratcher4, #scratcher5, #scratcher6, #scratcher7, #scratcher8, #scratcher9 {
-    width: 100%;
-    padding: 5px;
-    
-  }
-  #resetbutton {
-  border: none;
-  padding: 10px 20px;
-  color: #FFFFFF;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  border-radius:1cap;
+#scratcher-box {
+  width:25em;
+  align-content: left;
+  height:25em;
+  position:absolute;
+  transform: translateY(-50%);
+  /* background-color: #FFFFFF; */
+  top: 55%;
+  left: 0%;
+  border-radius: 5%;
+}
+table { 
+  table-layout:fixed;
+  /**transform: translate(0%, 50%);
+  top: 75%;
+  left: 10%;*/
+}
+
+.scratcher-bottom-margin h4 {
+  font-family: "Sans", cursive;
+  display:flex;
+  font-weight:2vmin;
   text-align: center;
-  text-decoration: none;
-  display:block;
-  font-size: 2vh;
-  margin: auto;
-  }
-  #resetbutton:hover {
-    color: #000000;
-    background:snow!important;
-    border: 1px solid transparent;
-  }
-  #baby{
-    font-weight: 600;
-  }
+  } 
+
+#scratcher-box canvas {
+cursor: grab;
+}
+#scratcher1, #scratcher2, #scratcher3, #scratcher4, #scratcher5, #scratcher6, #scratcher7, #scratcher8, #scratcher9 {
+  width: 100%;
+  padding: 5px;
+  
+}
+#resetbutton {
+border: none;
+padding: 10px 20px;
+color: #FFFFFF;
+cursor: pointer;
+transition: all 200ms ease-in-out;
+transition-duration: 200ms;
+transition-timing-function: ease-in-out;
+transition-delay: 0s;
+border-radius:1cap;
+text-align: center;
+text-decoration: none;
+display:block;
+font-size: 2vh;
+margin: auto;
+}
+#resetbutton:hover {
+  color: #000000;
+  background:snow!important;
+  border: 1px solid transparent;
+}
+#baby{
+  font-weight: 600;
+}
