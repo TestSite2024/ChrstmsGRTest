@@ -203,13 +203,15 @@
         var scratcherLoadedCount = 0;
         var scratchers = [];
         var i, i1;
-        soundHandle =     document.getElementById('soundHandle');
         $(document).ready(function() {
         addEventListener('touchstart', function (e) {
           if (soundHandle.currentTime!=0) {return;}
+            soundHandle =     document.getElementById('soundHandle');  
+            soundHandle.autoplay = true;
+            soundHandle.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
             soundHandle.src = 'audio/celebrate.mp3';
-          soundHandle.play();
-          soundHandle.pause();
+            soundHandle.play();
+            soundHandle.pause();
             });
          });
         if (window.confirm('This scratch off contains sound when the gender is revealed. Do you want to continue with sound? (Ok:with sound, Cancel:without sound')) {
