@@ -223,7 +223,8 @@
             addEventListener('beforeunload', function (e) {
                 soundHandle.pause();
                 soundHandle.currentTime=0;
-            }
+            });
+        });
         // const mediaQueryList = window.matchMedia("(orientation: portrait)");
         // mediaQueryList.addEventListener("change", handleOrientationChange);
         // handleOrientationChange(mediaQueryList);
