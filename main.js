@@ -48,7 +48,7 @@
         }
         if ((pct1>15 && pct2>15 && pct6>15)&&(pct3<15||pct4<15||pct5<15)) {
             if (!CrispyToast.clearall()&&!triggered){
-                CrispyToast.error('Scratch other circles. You didnt find the gender yet!',{ position: 'top-center' },{timeout: 6000});
+                CrispyToast.error('Scratch other circles. You havent find the gender yet!',{ position: 'top-center' },{timeout: 6000});
                 }
         } 
         if (pct3>15&& pct4>15 && pct5>15) {
@@ -211,8 +211,9 @@
         
            
         //console.log(params.surname);
-        if (params.get('surname') != null) {
-            $("#baby").text('baby ' + params.get('surname')+'!');}
+        var surname = params.get('surname');
+        if (surname !=null && surname.replace(/\s/g, '').length) {
+            $("#baby").text('baby ' + surname+'!');}
         else {
             $("#baby").text('the baby!');
         }
