@@ -104,6 +104,17 @@ font-weight: 400;
   top: 70%;
   left: 50%;
 }
+/* Styles for mobile phones */ 
+@media (max-width: 320px) { 
+  
+  .pagetop {
+    scale: 0.85;
+  }
+  #scratcher-box {
+    scale: 0.8;
+    left: 40%;    
+  }
+}
 #scratcher-box canvas {
   cursor: grab;
   }
@@ -124,9 +135,9 @@ table {
 #scratcher-bottom-margin {
   display:block;
   position: fixed;
-  text-align: center;
+  text-align: right;
   bottom: 1px;
-  left: 1px;
+  right: 1px;
   } 
 
 #resetbutton {
