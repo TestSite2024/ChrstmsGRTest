@@ -121,10 +121,12 @@ table {
     border-style: solid; */
 }
 
-.scratcher-bottom-margin h4 {
-  font-family: "Sans", cursive;
-  display:flex;
+#scratcher-bottom-margin {
+  display:block;
+  position: fixed;
   text-align: center;
+  bottom: 1px;
+  left: 1px;
   } 
 
 #resetbutton {
@@ -209,6 +211,7 @@ button:hover {
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 60%; /* Could be more or less, depending on screen size */
+  word-break: break-word;
 }
 h2 {
   color: #000000 !important;
