@@ -235,20 +235,11 @@
                 soundHandle.play();
                 soundHandle.pause();
         });
-        // $(document).on("load", function (e) {
-        //     if (soundHandle.currentTime!=0) {return;}
-        //       soundHandle =     document.getElementById('soundHandle');  
-        //       soundHandle.autoplay = true;
-        //       soundHandle.muted=false;
-        //       soundHandle.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
-        //       soundHandle.src = 'audio/celebrate.mp3';
-        //       soundHandle.play();
-        //       soundHandle.pause();
-        //       });
-        window.addEventListener(
-            "pagehide",
-            (event) => {
-              if (event.persisted) {
+        document.addEventListener(
+            "visibilitychange",
+             function(evt) {
+                console.log("page hidden")
+              if (document.visibilityState != "visible") {
                 soundHandle.pause();
                 soundHandle.currentTime=0;              }
             },
