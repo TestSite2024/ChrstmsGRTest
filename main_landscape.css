@@ -114,18 +114,19 @@ font-weight: 200;
   border-radius: 5%;
 }
 /* Styles for mobile phones */ 
-@media (max-width: 680px) { 
-  
-  #scratcher-box {
-    scale: 0.9;
-    top:50% ;
-  }
-}
-@media (max-height: 352px) { 
+
+@media (min-height: 352px), (max-height: 400px) { 
   
   #scratcher-box {
     scale: 0.95;
     top: 60%
+  }
+}
+@media (max-height:351px), (min-height:319){ 
+  
+  #scratcher-box {
+    scale: 0.9;
+    top:50% ;
   }
 }
 table { 
