@@ -123,13 +123,12 @@ font-weight: 200;
     top:50% ;
   }
 }
-@media (max-width: 480px) { 
+@media (max-width: 838px) { 
   .pagetop{
     overflow: hidden;
   }
   #scratcher-box {
     scale: 0.6;
-    position:sticky;
     top:50% ;
   }
 }
