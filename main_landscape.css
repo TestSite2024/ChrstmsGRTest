@@ -123,13 +123,12 @@ font-weight: 200;
     top:50% ;
   }
 }
-@media (max-width: 838px) { 
+@media (max-height: 352px) { 
   .pagetop{
     overflow: hidden;
   }
   #scratcher-box {
-    scale: 0.6;
-    top:50% ;
+    scale: 0.8;
   }
 }
 table { 
