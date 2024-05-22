@@ -82,7 +82,7 @@ font-weight: 400;
   font-weight: 400;
   color: #000000;
   flex-direction: column;
-  font-size: 3vmin;
+  font-size: 1.5vh;
   text-align: center;
   white-space:normal;
   } 
@@ -110,10 +110,26 @@ font-weight: 400;
   .pagetop {
     scale: 0.85;
   }
+  .pagetop h4 {
+    font-size: calc(0.7rem + 0.6vw) ;
+  }
   #scratcher-box {
     scale: 0.8;
     left: 40%;    
   }
+}
+
+@media (min-width: 321px), (max-width:1024){ 
+  .pagetop h4 {
+    font-size: calc(0.7rem + 1vw) ;
+  }
+}
+
+@media (min-width: 1025px){ 
+  .pagetop h4 {
+    font-size: 2vh;
+  }
+  
 }
 #scratcher-box canvas {
   cursor: grab;
@@ -259,8 +275,12 @@ hr {
 }
 
 /* Change styles for cancel button and delete button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 360px) {
   .nosoundbtn, .withsoundbtn {
-     width: 100%;
+    font-size: 5vw; 
+    width: 100%;
+  }
+  h2{
+    font-size: 6vw;
   }
 }
