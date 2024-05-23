@@ -114,7 +114,20 @@ font-weight: 200;
   border-radius: 5%;
 }
 /* Styles for mobile phones */ 
+@media (max-height:318px), (max-width:620){ 
+  
+  .pagetop h4 {
+    font-size: calc(0.5rem + 0.55vw);
+  }
+  .pagetop h3 {
+    font-size: calc(0.7rem + 1vw);
+  }
+  #scratcher-box {
+    scale: 0.8;
+    top:40% ;
+  } 
 
+}
 @media (min-height: 352px), (max-height: 400px) { 
   .pagetop h4 {
     font-size: calc(0.5rem + 0.75vw);
@@ -135,20 +148,7 @@ font-weight: 200;
   }
 }
 
-@media (max-height:318px), (max-width:620){ 
-  
-  .pagetop h4 {
-    font-size: calc(0.5rem + 0.55vw);
-  }
-  .pagetop h3 {
-    font-size: calc(0.7rem + 1vw);
-  }
-  #scratcher-box {
-    scale: 0.7;
-    top:40% ;
-  } 
 
-}
 table { 
   table-layout:fixed;
   /**transform: translate(0%, 50%);
