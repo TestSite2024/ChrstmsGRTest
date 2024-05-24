@@ -1,5 +1,19 @@
 /**
+ * Scratch-off canvas
+ *
+ * NOTE: this code monkeypatches Function.prototype.bind() if it doesn't
+ * already exist.
+ *
+ * NOTE: This is demo code that has been converted to be less demo-y.
+ * But it is still demo-y.
+ *
+ * To make (more) correct:
+ *  o   add error handling on image loads
+ *  o   fix inefficiencies
+ *
  * depends on jQuery>=1.7
+ *
+ * Portions Copyright (c) 2012 Brian "Beej Jorgensen" Hall <beej@beej.us>
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -210,6 +224,7 @@ Scratcher = (function() {
     Scratcher.prototype.scratchLine = function(x, y, fresh) {
         var can = this.canvas.draw;
         var ctx = can.getContext('2d');
+        
         can.getContext("2d", { willReadFrequently: true });
         ctx.lineWidth = 10;
         ctx.lineCap = ctx.lineJoin = 'round';
@@ -293,7 +308,6 @@ Scratcher = (function() {
     
         $(c).on('mousedown', mousedown_handler.bind(this))
             .on('touchstart', mousedown_handler.bind(this));
-    
         $(document).on('mousemove', mousemove_handler.bind(this));
         $(document).on('touchmove', mousemove_handler.bind(this));
     

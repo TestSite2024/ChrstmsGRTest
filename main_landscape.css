@@ -130,7 +130,7 @@ font-weight: 200;
 }
 @media (min-height: 352px), (max-height: 400px) { 
   .pagetop h4 {
-    font-size: calc(0.5rem + 0.75vw);
+    font-size: calc(0.5rem + 0.70vw);
   }
   .pagetop h3 {
     font-size: calc(0.7rem + 1.5vw);

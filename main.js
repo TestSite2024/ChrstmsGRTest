@@ -13,14 +13,17 @@
 
     var color1 = '#ff95c8';
     var color2 = '#5194f8';
+    var color3 ='#969696';
     var colortxt1 = '#F860AA';
     var colortxt2= '#7FB1ED';
+    var colortxt3= '#000000';
     //Select the background color
     var color =color1;
     //Select the text color
     var colortxt = colortxt1;
     var gendertext1 = "It is a Girl!";
     var gendertext2 = "It is a Boy!";
+    var gendertext3= "It is a Demo!";
     //Select the gender text
     var gendertext = gendertext1;
     var surname;
@@ -39,34 +42,35 @@
      * Handle scratch event on a scratcher
      */
     function checkpct() {
-        
-        if (pct3>0 && pct4>0 && pct5>0)  {
-            if (pct3<15 || pct4<15 || pct5<15)  {
-            //document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
-            if (!CrispyToast.clearall()){
-                CrispyToast.success('Scratch MORE!',{ position: 'top-center' },{timeout: 3000});
-                }
+        if (!triggered) {
+            if (pct3>0 && pct4>0 && pct5>0)  {
+                if (pct3<15 || pct4<15 || pct5<15)  {
+                //document.getElementById("scratcher3Pct").innerHTML="Scratch MORE!";
+                if (!CrispyToast.clearall()){
+                    CrispyToast.success('Scratch MORE!',{ position: 'top-center' },{timeout: 3000});
+                    }
+                } 
+            }
+            if ((pct1>15 && pct2>15 && pct6>15)&&(pct3<15||pct4<15||pct5<15)) {
+                if (!CrispyToast.clearall()&&!triggered){
+                    CrispyToast.error('Scratch other circles. You havent find the gender yet!',{ position: 'top-center' },{timeout: 6000});
+                    }
             } 
-        }
-        if ((pct1>15 && pct2>15 && pct6>15)&&(pct3<15||pct4<15||pct5<15)) {
-            if (!CrispyToast.clearall()&&!triggered){
-                CrispyToast.error('Scratch other circles. You havent find the gender yet!',{ position: 'top-center' },{timeout: 6000});
-                }
-        } 
-        if (pct3>15&& pct4>15 && pct5>15) {
-            $('#boy').text(gendertext);
-            $('#boy').css('color',colortxt);
-            $('#or').hide();
-            $('#girl').hide();
-            document.getElementsByTagName("body")[0].style.backgroundColor = color;
-            document.getElementsByTagName("body")[0].style.backgroundImage = 'none';
+            if (pct3>15&& pct4>15 && pct5>15) {
+                $('#boy').text(gendertext);
+                $('#boy').css('color',colortxt);
+                $('#or').hide();
+                $('#girl').hide();
+                document.getElementsByTagName("body")[0].style.backgroundColor = color;
+                document.getElementsByTagName("body")[0].style.backgroundImage = 'none';
 
-            //document.getElementsByTagName("body")[0].style.backgroundImage.animation = 'gradient 15s ease infinite';
-            $('#H3').hide();
-            $('#H4').hide();
-            $('#scratcher3Pct').hide();
+                //document.getElementsByTagName("body")[0].style.backgroundImage.animation = 'gradient 15s ease infinite';
+                $('#H3').hide();
+                $('#H4').hide();
+                $('#scratcher3Pct').hide();
 
-            confetti_effect();
+                confetti_effect();
+            }
         }
     };
     function scratcher1Changed(ev) {
@@ -286,7 +290,7 @@
                 'images/foreground.jpg');
         
         }
-        
+       
         // get notifications of this scratcher changing
         // (These aren't "real" event listeners; they're implemented on top
         // of Scratcher.)
@@ -299,7 +303,8 @@
         //scratchers[5].addEventListener('reset', scratchersChanged);
         scratchers[5].addEventListener('scratchesended', scratcher5Changed);
         scratchers[6].addEventListener('scratchesended', scratcher6Changed);
-
+        var canvas = document.getElementById('scratcher1');
+        canvas.onmousemove = null;
         // Or if you didn't want to do it every scratch (to save CPU), you
         // can just do it on 'scratchesended' instead of 'scratch':
         //scratchers[2].addEventListener('scratchesended', scratcher3Changed);
