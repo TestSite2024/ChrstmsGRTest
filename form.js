@@ -8,7 +8,9 @@ inputBtc.textContent = add;
 document.addEventListener("mousedown",function(e){
    var target = e.target;
    //if((target.contains(inputBtc) || target.contains(sharebtn)) && !inputLtc.value){
-   if(target.contains(inputBtc) && !inputLtc.value){
+   var surname = inputLtc.value;
+   console.log(surname.replace(/\s/g, '').length);
+   if(target.contains(inputBtc) && (!inputLtc.value || surname.replace(/\s/g, '').length==0)){
       //console.log("click");
       window.alert("Please enter a valid surname!");
       inputBtc.style.pointerEvents = "none";
