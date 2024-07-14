@@ -117,11 +117,19 @@ font-weight: 400;
     scale: 0.8;
     left: 40%;    
   }
+  #t1 {
+    transform: translateX(-10%) scale(0.7, 0.7);
+  }
+  
 }
 
 @media (min-width: 321px), (max-width:1024){ 
   .pagetop h4 {
     font-size: calc(0.7rem + 1vw) ;
+  }
+  .pagetop h1 {
+    font-size: calc(2rem + 3vw);
+
   }
 }
 
