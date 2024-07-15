@@ -41,11 +41,6 @@ body {
 }
 } */
 
-.pacifico-regular {
-font-family: "Pacifico", cursive;
-font-weight: 400;
-font-style: normal;
-}
 .pagetop{
   position:relative;
   display: block;
@@ -54,7 +49,7 @@ font-style: normal;
   top: 45%;
 }
 .pagetop h1 {
-font-family: "Pacifico", cursive;
+font-family: "Creepster", cursive;
 display:flexbox;
 font-weight: 400;
 flex-direction: column;
@@ -132,7 +127,7 @@ font-weight: 200;
     scale: 0.8;
     top:40% ;
   } 
-
+  
 }
 @media (min-height: 352px), (max-height: 400px) { 
   .pagetop h4 {
@@ -152,6 +147,7 @@ font-weight: 200;
     scale: 0.9;
     top:50% ;
   }
+  
 }
 
 
