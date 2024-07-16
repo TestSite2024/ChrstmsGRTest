@@ -139,6 +139,7 @@ font-weight: 400;
   .pagetop h1 #or {
     font-size: calc(2rem + 1vw);
   }
+  
 }
 
 @media (min-width: 1025px){ 
