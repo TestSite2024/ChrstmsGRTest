@@ -65,7 +65,7 @@ text-shadow: 4px 6px #FFFFFF;
   font-size: calc(3rem + 3vw);
 }
 .pagetop h3 {
-font-family: "Roboto", sans-serif;
+font-family: "Bona Nova SC", serif;
 flex-direction: column;
 font-size:5vmin;
 color: #000000 !important;
@@ -122,10 +122,10 @@ font-weight: 400;
     transform: translateX(-10%) scale(0.7, 0.7);
   }
   .pagetop h1 #or {
-    font-size: calc(2rem + 3vw);
+    font-size: calc(3rem + 3vw);
   }
   .pagetop h1 {
-    font-size: calc(3rem + 3vw);
+    font-size: calc(4rem + 3vw);
   }
 }
 
@@ -134,7 +134,7 @@ font-weight: 400;
     font-size: calc(0.7rem + 1vw) ;
   }
   .pagetop h1 {
-    font-size: calc(3rem + 3vw);
+    font-size: calc(4rem + 3vw);
   }
   .pagetop h1 #or {
     font-size: calc(2rem + 1vw);

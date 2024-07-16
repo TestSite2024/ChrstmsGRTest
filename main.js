@@ -160,7 +160,7 @@
             scratchers[i].reset();
         }
        
-        $('#boy').text('Boy');
+        $('#boy').text('Boo-y');
         $('#boy').css('color',colortxt2);
         $('#or').show();
         $('#girl').show();
