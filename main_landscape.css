@@ -83,17 +83,15 @@ font-weight: 200;
   white-space:pre-wrap; */
   float:right;
   }
-  h4 span {
-    /*white-space:pre-wrap;*/
-    background-color: #FFFFFF;
-
-  }
+  
   #t1 {
     margin-right: 0px;
     display:inline-table;
+    width: calc(50% - 10px);
+
     /*transform: translateX(-10%) scale(0.8, 0.8);*/
   }
-
+  
   .tabletop h4 {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -103,6 +101,19 @@ font-weight: 200;
     text-align: right;
     padding-right: 10%;
     } 
+  #instr {
+      margin-right: 0px;
+      margin-left: auto;
+      display: inline-table;
+      float: right;
+      padding-right: 10px;
+      width: calc(50% - 10px);
+    }
+  #reveal {
+      margin-right: 0px;
+      margin-left: auto;
+      width: calc(50% - 10px);
+  }
 #scratcher-box {
   width:22em;
   align-content: left;
