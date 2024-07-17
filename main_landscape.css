@@ -55,7 +55,7 @@ font-family: "Creepster", cursive;
 display:flexbox;
 font-weight: 400;
 flex-direction: column;
-font-size: calc(5rem + 0.9vw);
+font-size: calc(3rem + 0.7vw);
 text-align: right;
 padding-right: 10px;
 text-shadow: 4px 6px #FFFFFF;
@@ -116,8 +116,11 @@ font-weight: 200;
   border-radius: 5%;
 }
 /* Styles for mobile phones */ 
-@media (max-height:318px), (max-width:620){ 
+@media (max-height:320px), (max-width:620){ 
   
+  .pagetop h1 {
+    font-size: calc(2rem + 0.55vw);
+  }
   .pagetop h4 {
     font-size: calc(0.5rem + 0.55vw);
   }
@@ -128,9 +131,20 @@ font-weight: 200;
     scale: 0.8;
     top:40% ;
   } 
-  
+  #t1
+  {
+    width: calc(40% - 10px);
+
+  }
+  #reveal {
+    width: calc(45% - 10px);
+
+  }
 }
 @media (min-height: 352px), (max-height: 400px) { 
+  .pagetop h1 {
+    font-size: calc(3rem + 0.55vw);
+  }
   .pagetop h4 {
     font-size: calc(0.5rem + 0.70vw);
   }
@@ -141,6 +155,15 @@ font-weight: 200;
     scale: 0.95;
     top: 60%
   }
+  #t1
+  {
+    width: calc(40% - 10px);
+
+  }
+  #reveal {
+    width: calc(45% - 10px);
+
+  }
 }
 @media (max-height:351px), (min-height:319){ 
   
@@ -148,7 +171,18 @@ font-weight: 200;
     scale: 0.9;
     top:50% ;
   }
-  
+  .pagetop h1 {
+    font-size: calc(2rem + 0.55vw);
+  }
+  #t1
+  {
+    width: calc(40% - 10px);
+
+  }
+  #reveal {
+    width: calc(45% - 10px);
+
+  }
 }
 
 
