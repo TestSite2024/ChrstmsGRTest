@@ -46,29 +46,27 @@ body {
   display: block;
   transform: translate(0%,-50%);
   /* background-color: #FFFFFF; */
-  top: 45%;
+  top: 50%;
+  display: inline-table;
+
 }
 .pagetop h1 {
 font-family: "Creepster", cursive;
 display:flexbox;
 font-weight: 400;
 flex-direction: column;
-font-size: calc(3rem + 0.9vw);
+font-size: calc(5rem + 0.9vw);
 text-align: right;
-padding-right: 1%;
+padding-right: 10px;
 text-shadow: 4px 6px #FFFFFF;
 } 
 .pagetop h3 {
 font-family: "Bona Nova SC", serif;
-display: block;
 color: #000000 !important;
 font-style: normal;
-flex-direction: column;
 font-size:4vmin;
 text-align: right;
-padding-right: 1%;
 font-weight: 200;
-
 } 
 .pagetop h4 {
   font-family: "Roboto", sans-serif;
@@ -82,10 +80,10 @@ font-weight: 200;
   transform: translateX(100%);
   white-space:pre-wrap; */
   float:right;
-  }
+  
+}
   
   #t1 {
-    margin-right: 0px;
     display:inline-table;
     width: calc(50% - 10px);
 
@@ -99,20 +97,12 @@ font-weight: 200;
     flex-direction: column;
     font-size:4vmin;
     text-align: right;
-    padding-right: 10%;
-    } 
-  #instr {
-      margin-right: 0px;
-      margin-left: auto;
-      display: inline-table;
-      float: right;
-      padding-right: 10px;
-      width: calc(50% - 10px);
-    }
+} 
   #reveal {
-      margin-right: 0px;
-      margin-left: auto;
-      width: calc(50% - 10px);
+    float: right;
+    display: inline-table;
+    padding-right: 10px;
+    width: calc(50% - 10px);
   }
 #scratcher-box {
   width:22em;
