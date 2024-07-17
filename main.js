@@ -119,27 +119,38 @@ var pumpkin;
         }
         triggered=true;
         // do this for 10 seconds
-        var duration = 10 * 1000;
+        var duration = 8 * 1000;
         var end = Date.now() + duration;
-        var defaults = { scalar:2, startVelocity: 10, spread: 360, ticks: 50, zIndex: 0 };
-        var particleCount = 5 ;
-        (function frame() {
+        var defaults = {
+            startVelocity: 30, 
+            spread: 360, 
+            ticks: 60, 
+            zIndex: 0, 
+            scalar:2,
+            colors: ['#ff9a00', '#ff7400', '#ff4d00'],
+            shapes: [pumpkin]
+         };
+         var interval = setInterval(function() {
+            var timeLeft = end - Date.now();
+          
+            if (timeLeft <= 0) {
+              return clearInterval(interval);
+            }
+            var particleCount = 40* (timeLeft / duration); ;
         // launch a few confetti from the left edge
-        confetti({...defaults, particleCount, shapes: [pumpkin], origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },  colors: ['#ff9a00', '#ff7400', '#ff4d00']}
-        );
-        // and launch a few from the right edge
-        confetti({ ...defaults, particleCount, shapes: [pumpkin], origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }, colors: ['#ff9a00', '#ff7400', '#ff4d00']}
-        );
 
+        // and launch a few from the right edge
+        confetti({ ...defaults,  particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+        confetti({ ...defaults,  particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
         // keep going until we are out of time
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
+        // if (Date.now() < end) {
+        //     requestAnimationFrame(frame);
             
-            return;
-        }
+        //     return;
+        // }
         $("#resetbutton").show();
         
-        }());
+        },250);
      
          
     };
