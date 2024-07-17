@@ -64,8 +64,8 @@ var pumpkin;
                 $('#girl').hide();
                 document.getElementsByTagName("body")[0].style.backgroundColor = color;
                 document.getElementsByTagName("body")[0].style.backgroundImage = 'none';
+                //document.getElementById("H3").insertAdjacentHTML('afterend', "<h4 id='testtext' style='white-space:normal'> Depending on the product you buy, here it will say either <br> 'It is a Girl!' or 'It is a Boy! with pink or blue background.</h4>");
 
-                //document.getElementsByTagName("body")[0].style.backgroundImage.animation = 'gradient 15s ease infinite';
                 $('#H3').hide();
                 $('#H4').hide();
                 $('#scratcher3Pct').hide();
@@ -124,37 +124,31 @@ var pumpkin;
         var defaults = {
             startVelocity: 20, 
             spread: 180, 
-            ticks: 160, 
+            ticks: 40, 
             zIndex: 0, 
             //scalar:2,
             colors: ['#ffffff'],
             //colors: ['#ff9a00', '#ff7400'],
             shapes: [pumpkin]
          };
-         var interval = setInterval(function() {
-            var timeLeft = end - Date.now();
-          
-            if (timeLeft <= 0) {
-              return clearInterval(interval);
-            }
-            var particleCount = 30* (timeLeft / duration); ;
-        // launch a few confetti from the left edge
-
-        // and launch a few from the right edge
-        confetti({ ...defaults,  particleCount, scalar: randomInRange(1, 2.5), origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-        confetti({ ...defaults,  particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-        // keep going until we are out of time
-        // if (Date.now() < end) {
-        //     requestAnimationFrame(frame);
-            
-        //     return;
-        // }
-        $("#resetbutton").show();
-        
-        },250);
-     
+         var particleCount = 3 ;
+         (function frame() {
+         // launch a few confetti from the left edge
+ 
+         // and launch a few from the right edge
+         confetti({ ...defaults,  particleCount, scalar: randomInRange(1, 2.5), origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+         confetti({ ...defaults,  particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+ 
+         // keep going until we are out of time
+         if (Date.now() < end) {
+             requestAnimationFrame(frame);
+             return;
+         }
+         $("#resetbutton").show();
          
-    };
+         }());
+              
+     };
     
     /**
      * Reset all scratchers
