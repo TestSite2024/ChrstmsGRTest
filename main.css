@@ -96,6 +96,10 @@ white-space:normal;
       margin-right: auto;
       width: 100%;
   }
+  #baby
+  {
+    white-space: normal;
+  }
     /* #t1 #boy{
  background: url(images/back1.png) no-repeat center center;
  background-size: contain;
@@ -115,11 +119,22 @@ white-space:normal;
   left: 50%;
 }
 /* Styles for mobile phones */ 
+@media (max-width: 380px), (max-height:670) {
+  .pagetop h4 {
+    font-size: calc(0.7rem + 1vw) ;
+  }
+  .pagetop h1 {
+    font-size: calc(2rem + 2vw);
+  }
+  .pagetop h1 #or {
+    font-size: calc(2rem + 1vw);
+  }
+  .pagetop h3 {
+    font-size: calc(1.3rem + 0.5vw);
+  }
+} 
 @media (max-width: 320px) { 
   
-  .pagetop {
-    scale: 0.85;
-  }
   .pagetop h4 {
     font-size: calc(0.7rem + 0.6vw) ;
   }
