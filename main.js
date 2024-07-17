@@ -122,12 +122,13 @@ var pumpkin;
         var duration = 8 * 1000;
         var end = Date.now() + duration;
         var defaults = {
-            startVelocity: 30, 
-            spread: 360, 
-            ticks: 60, 
+            startVelocity: 20, 
+            spread: 180, 
+            ticks: 160, 
             zIndex: 0, 
-            scalar:2,
-            colors: ['#ff9a00', '#ff7400', '#ff4d00'],
+            //scalar:2,
+            colors: ['#ffffff'],
+            //colors: ['#ff9a00', '#ff7400'],
             shapes: [pumpkin]
          };
          var interval = setInterval(function() {
@@ -136,11 +137,11 @@ var pumpkin;
             if (timeLeft <= 0) {
               return clearInterval(interval);
             }
-            var particleCount = 40* (timeLeft / duration); ;
+            var particleCount = 30* (timeLeft / duration); ;
         // launch a few confetti from the left edge
 
         // and launch a few from the right edge
-        confetti({ ...defaults,  particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+        confetti({ ...defaults,  particleCount, scalar: randomInRange(1, 2.5), origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
         confetti({ ...defaults,  particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
         // keep going until we are out of time
         // if (Date.now() < end) {
