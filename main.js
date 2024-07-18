@@ -148,34 +148,40 @@ var pct =new Array(9);
         }
         triggered=true;
         // do this for 10 seconds
-        var duration = 8 * 1000;
-        var end = Date.now() + duration;
-        var defaults = {
-            startVelocity: 20, 
-            spread: 180, 
-            ticks: 40, 
-            zIndex: 0, 
-            //scalar:2,
-            colors: ['#ffffff'],
-            //colors: ['#ff9a00', '#ff7400'],
-            shapes: [pumpkin]
-         };
-         var particleCount = 3 ;
-         (function frame() {
-         // launch a few confetti from the left edge
- 
-         // and launch a few from the right edge
-         confetti({ ...defaults,  particleCount, scalar: randomInRange(1, 2.5), origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-         confetti({ ...defaults,  particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
- 
-         // keep going until we are out of time
-         if (Date.now() < end) {
-             requestAnimationFrame(frame);
-             return;
-         }
-         $("#resetbutton").show();
-         
-         }());
+        var end = Date.now() + (5 * 1000);
+        var colors = ['#ff912a', '#ffffff'];
+
+        (function frame() {
+
+            confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 55,
+                scalar: 2,
+                shapes: [pumpkin],
+                origin: { x: 0, y:1 },
+                startVelocity: 150,
+                colors: colors
+            });
+            confetti({
+                particleCount: 2,
+                angle: 120,
+                spread: 55,
+                startVelocity: 150,
+                origin: { x: 1, y:1},
+                colors: colors
+            });
+
+
+            // keep going until we are out of time
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+
+                return;
+            }
+            $("#resetbutton").show();
+
+        }());
               
      };
     
