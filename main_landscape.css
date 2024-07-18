@@ -98,12 +98,22 @@ font-weight: 200;
     font-size:4vmin;
     text-align: right;
 } 
-  #reveal {
-    float: right;
-    display: inline-table;
-    padding-right: 10px;
-    width: calc(50% - 10px);
-  }
+
+#tboy {
+  margin-left: auto;
+  margin-right: 0;
+  text-align:right;
+  width: calc(50% - 10px);
+
+}
+
+#reveal {
+  float: right;
+  display: inline-table;
+  padding-right: 10px;
+  width: calc(50% - 10px);
+}
+
 #scratcher-box {
   width:22em;
   align-content: left;

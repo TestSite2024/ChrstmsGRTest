@@ -72,8 +72,10 @@ var pct =new Array(9);
             } 
 
             if (pct1>15&& pct2>15 && pct3>15) {
-                $('#boy').text(gendertext);
-                $('#boy').css('color',colortxt);
+                $('#tboy').show();
+                $('#tboy').text(gendertext);
+                $('#tboy').css('color',colortxt);
+                $('#boy').hide();
                 $('#or').hide();
                 $('#girl').hide();
                 document.getElementsByTagName("body")[0].style.backgroundColor = color;
@@ -197,8 +199,8 @@ var pct =new Array(9);
             scratchers[i].reset();
         }
        
-        $('#boy').text('Boo-y');
-        $('#boy').css('color',colortxt2);
+        $('#tboy').hide();
+        $('#boy').show();
         $('#or').show();
         $('#girl').show();
 
