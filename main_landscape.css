@@ -51,7 +51,7 @@ body {
 
 }
 .pagetop h1 {
-font-family: "Creepster", cursive;
+font-family: "Mountains of Christmas", cursive;
 display:flexbox;
 font-weight: 400;
 flex-direction: column;
@@ -129,7 +129,7 @@ font-weight: 200;
 @media (max-height:320px), (max-width:620){ 
   
   .pagetop h1 {
-    font-size: calc(2rem + 0.55vw);
+    font-size: calc(3rem + 0.55vw);
   }
   .pagetop h4 {
     font-size: calc(0.5rem + 0.55vw);
@@ -153,7 +153,7 @@ font-weight: 200;
 }
 @media (min-height: 352px), (max-height: 400px) { 
   .pagetop h1 {
-    font-size: calc(3rem + 0.55vw);
+    font-size: calc(5rem + 0.55vw);
   }
   .pagetop h4 {
     font-size: calc(0.5rem + 0.70vw);
@@ -163,7 +163,7 @@ font-weight: 200;
   }
   #scratcher-box {
     scale: 0.95;
-    top: 60%
+    top: 60%Mountains of Christmas
   }
   #t1
   {

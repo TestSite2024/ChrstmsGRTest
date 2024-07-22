@@ -53,9 +53,9 @@ body {
 } */
 
 .pagetop h1 {
-font-family: "Creepster", cursive;
+font-family: "Mountains of Christmas", cursive;
 display:flexbox;
-font-weight: 400;
+font-weight: 700;
 flex-direction: column;
 font-size: calc(4rem + 1vw);
 text-align: center;
@@ -149,7 +149,7 @@ white-space:normal;
     font-size: calc(3rem + 3vw);
   }
   .pagetop h1 {
-    font-size: calc(4rem + 3vw);
+    font-size: calc(6rem + 3vw);
   }
 }
 
@@ -158,7 +158,7 @@ white-space:normal;
     font-size: calc(0.7rem + 1vw) ;
   }
   .pagetop h1 {
-    font-size: calc(4rem + 3vw);
+    font-size: calc(6rem + 3vw);
   }
   .pagetop h1 #or {
     font-size: calc(2rem + 1vw);
