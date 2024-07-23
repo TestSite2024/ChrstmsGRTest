@@ -129,7 +129,7 @@ font-weight: 200;
 @media (max-height:320px), (max-width:620){ 
   
   .pagetop h1 {
-    font-size: calc(3rem + 0.55vw);
+    font-size: calc(2rem + 0.55vw);
   }
   .pagetop h4 {
     font-size: calc(0.5rem + 0.55vw);
@@ -175,6 +175,7 @@ font-weight: 200;
 
   }
 }
+
 @media (max-height:351px), (min-height:319){ 
   
   #scratcher-box {
@@ -182,7 +183,7 @@ font-weight: 200;
     top:50% ;
   }
   .pagetop h1 {
-    font-size: calc(2rem + 0.55vw);
+    font-size: calc(3rem + 0.55vw);
   }
   #t1
   {
@@ -195,6 +196,30 @@ font-weight: 200;
   }
 }
 
+
+@media (max-height:340px), (max-width: 481px){ 
+  .img{
+    line-height: 0.5vh;
+  }
+  .pagetop h3 {
+    font-size: calc(1.1rem + 0.5vw);
+  }
+  .pagetop h4 {
+    font-size: calc(0.7rem + 0.6vw) ;
+  }
+  #scratcher-box {
+    scale: 0.6;
+    left: -10%;
+    top: 30%;    
+  }
+  
+  .pagetop h1 #or {
+    font-size: calc(2rem + 3vw);
+  }
+  .pagetop h1 {
+    font-size: calc(3rem + 3vw);
+  }
+}
 
 table { 
   table-layout:fixed;
