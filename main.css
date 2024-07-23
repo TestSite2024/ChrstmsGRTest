@@ -61,6 +61,7 @@ font-size: calc(4rem + 1vw);
 text-align: center;
 text-shadow: 4px 6px #FFFFFF;
 } 
+
 .pagetop h3 {
 font-family: "Bona Nova SC", serif;
 flex-direction: column;
