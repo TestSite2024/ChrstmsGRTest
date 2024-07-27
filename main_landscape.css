@@ -51,7 +51,7 @@ body {
   -o-transform: translate(0%,-50%);
   transform: translate(0%,-50%); */
   /* background-color: #FFFFFF; */
-  top: 20%;
+  top: 10%;
   display: inline-table;
 
 }
@@ -112,10 +112,16 @@ font-weight: 200;
   width: calc(50% - 10px);
 
 }
-td#or {
-  line-height: 5vw !important;
-  font-size: 3vw !important;
-}
+
+
+
+
+
+
+
+
+
+
 #reveal {
   float: right;
   display: inline-table;
@@ -140,7 +146,7 @@ td#or {
 }
 /* Styles for mobile phones */ 
 
-@media only screen and (max-height: 400px), (min-height: 352px) and (max-width: 670px) { 
+@media only screen and (max-height: 400px) and (min-height: 352px) and (max-width: 670px) { 
   .pagetop h1 {
     font-size: calc(5rem + 0.55vw);
   }
@@ -151,8 +157,9 @@ td#or {
     font-size: calc(1rem + 1.5vw);
   }
   #scratcher-box {
-    scale: 0.95;
-    top: 60%;
+    scale: 0.8;
+    top: 40%;
+    left:-5%;
   }
   #t1
   {
@@ -164,27 +171,8 @@ td#or {
 
   }
 }
-@media (min-height: 401px), (min-width: 671px) { 
-  .pagetop h1 {
-    font-size: calc(5rem + 1vw);
-  }
-  .pagetop h4 {
-    font-size: calc(0.5rem + 0.70vw);
-  }
-  .pagetop h3 {
-    font-size: calc(1rem + 1.5vw);
-  }
-  #t1
-  {
-    width: calc(50% - 10px);
 
-  }
-  #reveal {
-    width: calc(50% - 10px);
-
-  }
-}
-@media (max-height:321px), (max-width:620){ 
+@media (max-height:321px), (max-width:620px){ 
   
   .pagetop h1 {
     font-size: calc(3rem + 0.55vw);
@@ -197,7 +185,7 @@ td#or {
   }
   #scratcher-box {
     scale: 0.7;
-    top:40% ;
+    top:30% ;
     left: -5%;
   } 
   #t1
@@ -208,6 +196,30 @@ td#or {
   #reveal {
     width: calc(45% - 10px);
 
+  }
+}
+@media (min-height: 360px), (min-width: 671px) { 
+  .pagetop h1 {
+    font-size: calc(5rem + 1vw);
+  }
+  .pagetop h4 {
+    font-size: calc(0.5rem + 0.70vw);
+  }
+  .pagetop h3 {
+    font-size: calc(1rem + 1.5vw);
+  }
+  #t1
+  {
+    width: calc(50% - 10px);
+  }
+  #reveal {
+    width: calc(50% - 10px);
+
+  }
+  #scratcher-box {
+    scale: 0.95;
+    top: 50%;
+    left: 0%;
   }
 }
 /* @media (max-height:351px) and (min-height:319){ 

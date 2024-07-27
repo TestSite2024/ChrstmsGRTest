@@ -166,10 +166,7 @@ white-space:normal;
   .pagetop h1 {
     font-size: calc(5rem + 1.8vw);
   }
-  #or {
-    font-size: calc(2rem + 1vw);
-    /* line-height: 5vh !important; */
-  }
+  
   .pagetop h3 {
     font-size: calc(1.3rem + 0.5vw);
   }
@@ -221,10 +218,7 @@ white-space:normal;
   .pagetop h1 {
     font-size: calc(3rem + 2vw);
   }
-  #or {
-    font-size: calc(0.7rem + 1vw);
-    /* line-height: 4vh !important; */
-  }
+  
   .images{
     max-width: 80% !important;
   }
