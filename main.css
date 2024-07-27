@@ -57,7 +57,7 @@ font-family: "Mountains of Christmas", cursive;
 display:flexbox;
 font-weight: 400;
 flex-direction: column;
-font-size: calc(4rem + 1vw);
+font-size: calc(5rem + 1vw);
 text-align: center;
 text-shadow: 4px 6px #FFFFFF;
 } 
@@ -134,7 +134,7 @@ white-space:normal;
     font-size: calc(0.7rem + 1vw) ;
   }
   .pagetop h1 {
-    font-size: calc(4rem + 3vw);
+    font-size: calc(5rem + 3vw);
   }
   .pagetop h1 #or {
     font-size: calc(2rem + 1vw);
@@ -170,11 +170,11 @@ white-space:normal;
     font-size: calc(0.7rem + 0.8vw) ;
   }
   .pagetop h1 {
-    font-size: calc(4rem + 1.8vw);
+    font-size: calc(5rem + 1.8vw);
   }
   #or {
     font-size: calc(2rem + 1vw);
-    line-height: 5vh !important;
+    /* line-height: 5vh !important; */
   }
   .pagetop h3 {
     font-size: calc(1.3rem + 0.5vw);
@@ -187,9 +187,9 @@ white-space:normal;
       -o-transform-origin: top left;
       transform-origin: top left;
   } */
-  #boy {
+  /* #boy {
     line-height: 3vh !important;
-  }
+  } */
 
   #scratcher-box {
     position:absolute;
@@ -206,10 +206,10 @@ white-space:normal;
   .pagetop h4 {
     font-size: calc(0.7rem + 0.6vw) ;
   }
-  #boy {
+  /* #boy {
     line-height: 3vh !important;
   }
- 
+  */
   #scratcher-box {
     position:absolute;
     scale: 1; 
@@ -229,7 +229,7 @@ white-space:normal;
   }
   #or {
     font-size: calc(0.7rem + 1vw);
-    line-height: 4vh !important;
+    /* line-height: 4vh !important; */
   }
   .images{
     max-width: 80% !important;
