@@ -185,7 +185,7 @@ font-weight: 200;
 
   }
 }
-/* @media (max-height:351px) and (min-height:319){ 
+@media (max-height:351px) and (min-height:319){ 
   
   #scratcher-box {
     scale: 0.9;
@@ -203,10 +203,10 @@ font-weight: 200;
     width: calc(45% - 10px);
 
   }
-} */
+}
 
 
-/* @media (max-height:340px), (max-width: 481px){ 
+@media (max-height:340px), (max-width: 481px){ 
   .img{
     line-height: 0.5vh;
   }
@@ -228,7 +228,7 @@ font-weight: 200;
   .pagetop h1 {
     font-size: calc(3rem + 3vw);
   }
-} */
+}
 
 table { 
   table-layout:fixed;
