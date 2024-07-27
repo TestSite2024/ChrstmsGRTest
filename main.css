@@ -167,7 +167,7 @@ white-space:normal;
 }
 @media (max-width: 375px), (max-height:667px) {
   .pagetop h4 {
-    font-size: calc(0.7rem + 1vw) ;
+    font-size: calc(0.7rem + 0.8vw) ;
   }
   .pagetop h1 {
     font-size: calc(4rem + 1.8vw);
