@@ -55,13 +55,12 @@ body {
 .pagetop h1 {
 font-family: "Mountains of Christmas", cursive;
 display:flexbox;
-font-weight: 700;
+font-weight: 400;
 flex-direction: column;
 font-size: calc(4rem + 1vw);
 text-align: center;
 text-shadow: 4px 6px #FFFFFF;
 } 
-
 .pagetop h3 {
 font-family: "Bona Nova SC", serif;
 flex-direction: column;
@@ -91,20 +90,24 @@ white-space:normal;
     text-align: center;
     }
  
-  #reveal {
-    display: block;
-    margin-left: auto;
-      margin-right: auto;
-      width: 100%;
-  }
-  #baby
-  {
-    white-space: normal;
-  }
-    /* #t1 #boy{
- background: url(images/back1.png) no-repeat center center;
- background-size: contain;
-} */
+#reveal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+#baby
+{
+  white-space: normal;
+}
+#boy{
+  line-height: 8vh;
+}
+#or{
+  line-height: 8vh;
+  font-size: 6vh;
+}
+
 #t1 {
   width: 350px;
 }
@@ -115,91 +118,123 @@ white-space:normal;
   height:22em;
   /*background-color: #FFFFFF;*/
   position:absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   top: 70%;
   left: 50%;
 }
 /* Styles for mobile phones */ 
-@media (max-width: 384px), (max-height:670) {
+
+
+@media (min-width: 376px), (max-width:1024px){ 
   .pagetop h4 {
     font-size: calc(0.7rem + 1vw) ;
   }
   .pagetop h1 {
-    font-size: calc(2rem + 2vw);
-  }
-  .pagetop h1 #or {
-    font-size: calc(2rem + 1vw);
-  }
-  .pagetop h3 {
-    font-size: calc(1.3rem + 0.5vw);
-  }
-} 
-@media (max-width: 320px) { 
-  
-  .pagetop h4 {
-    font-size: calc(0.7rem + 0.6vw) ;
-  }
-  #scratcher-box {
-    scale: 0.8;
-    left: 40%;    
-  }
-  #t1 {
-    transform: translateX(-10%) scale(0.7, 0.7);
-  }
-  .pagetop h1 #or {
-    font-size: calc(3rem + 3vw);
-  }
-  .pagetop h1 {
-    font-size: calc(6rem + 3vw);
-  }
-}
-
-@media (max-width: 320px), (max-height:481){ 
-  .img{
-    line-height: 0.5vh;
-  }
-  .pagetop h3 {
-    font-size: calc(1.1rem + 0.5vw);
-  }
-  .pagetop h4 {
-    font-size: calc(0.7rem + 0.6vw) ;
-  }
-  #scratcher-box {
-    scale: 0.6;
-    left: 28%;
-    top: 60%;    
-  }
-  #t1 {
-    transform: translate(-5%, -19%) scale(0.8, 0.8);
-  }
-  #reveal {
-    transform: translateY(-15%);
-  }
-  .pagetop h1 #or {
     font-size: calc(4rem + 3vw);
   }
-  .pagetop h1 {
-    font-size: calc(5rem + 3vw);
-  }
-}
-@media (min-width: 321px), (max-width:1024){ 
-  .pagetop h4 {
-    font-size: calc(0.7rem + 1vw) ;
-  }
-  .pagetop h1 {
-    font-size: calc(6rem + 3vw);
-  }
   .pagetop h1 #or {
     font-size: calc(2rem + 1vw);
   }
   
 }
 
+/* @media (max-width: 430px), (max-height:670) {
+  .pagetop h4 {
+    font-size: calc(0.7rem + 1vw) ;
+  }
+  .pagetop h1 {
+    font-size: calc(4rem + 2vw);
+  }
+  .pagetop h1 #or {
+    font-size: calc(2rem + 1vw);
+  }
+  .pagetop h3 {
+    font-size: calc(1.5rem + 0.5vw);
+  }
+  #or{
+    line-height: 5vh !important;
+  }
+}  */
 @media (min-width: 1025px){ 
   .pagetop h4 {
     font-size: 2vh;
   }
   
+}
+@media (max-width: 375px), (max-height:667px) {
+  .pagetop h4 {
+    font-size: calc(0.7rem + 1vw) ;
+  }
+  .pagetop h1 {
+    font-size: calc(4rem + 1.8vw);
+  }
+  #or {
+    font-size: calc(2rem + 1vw);
+    line-height: 5vh !important;
+  }
+  .pagetop h3 {
+    font-size: calc(1.3rem + 0.5vw);
+  }
+  /* #mainbody {
+    position: inherit;
+      -webkit-transform-origin: top left;
+      -ms-transform-origin: top left;
+      -moz-transform-origin: top left;
+      -o-transform-origin: top left;
+      transform-origin: top left;
+  } */
+  #boy {
+    line-height: 3vh !important;
+  }
+
+  #scratcher-box {
+    position:absolute;
+    scale: 1; 
+    top: 70%;
+  }
+  
+} 
+
+@media (max-width: 320px) { 
+  .pagetop h3 {
+    font-size: calc(1.2rem + 0.5vw);
+  }
+  .pagetop h4 {
+    font-size: calc(0.7rem + 0.6vw) ;
+  }
+  #boy {
+    line-height: 3vh !important;
+  }
+ 
+  #scratcher-box {
+    position:absolute;
+    scale: 1; 
+    top: 70%;
+  
+  }
+  /* #t1 {
+    -webkit-transform:  translate(-5%,-5%) scale(0.7, 0.7);
+    -ms-transform:translate(-5%,-5%) scale(0.7, 0.7);
+    -moz-transform:translate(-5%,-5%) scale(0.7, 0.7);
+    -o-transform:translate(-5%,-5%) scale(0.7, 0.7);
+    transform: translate(-5%,-5%) scale(0.7, 0.7);
+  } */
+ 
+  .pagetop h1 {
+    font-size: calc(3rem + 2vw);
+  }
+  #or {
+    font-size: calc(0.7rem + 1vw);
+    line-height: 4vh !important;
+  }
+  .images{
+    max-width: 80% !important;
+    
+  }
 }
 #scratcher-box canvas {
   cursor: grab;

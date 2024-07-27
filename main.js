@@ -155,12 +155,12 @@ var pct =new Array(9);
         var skew=1;
         (function frame() {
             var timeLeft = animationEnd - Date.now();
-            var ticks = Math.max(200, 500 * (timeLeft / duration));
+            // var ticks = Math.max(200, 300 * (timeLeft / duration));
             skew = Math.max(0.8, skew - 0.001);
             confetti({
                 particleCount: 1,
                 startVelocity: 0,
-                ticks: ticks,
+                ticks: 180,
                 scalar: 2,
                 origin: {
                 x: Math.random(),
@@ -203,6 +203,7 @@ var pct =new Array(9);
         $('#girl').show();
         $('.images').show();
 
+        document.getElementsByTagName("body")[0].style.backgroundColor = "#ffffff";
         document.getElementsByTagName("body")[0].style.backgroundImage = 'url(images/background.jpg)';
 
         $('#H3').show();

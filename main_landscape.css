@@ -13,6 +13,7 @@ html {
 }
 body {
   height: 100vh;
+  position: relative;
   background-image: url(images/background.jpg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -42,11 +43,15 @@ body {
 } */
 
 .pagetop{
-  position:relative;
+  position:absolute;
   display: block;
-  transform: translate(0%,-50%);
+  /* -webkit-transform: translate(0%,-50%);
+  -ms-transform: translate(0%,-50%);
+  -moz-transform: translate(0%,-50%);
+  -o-transform: translate(0%,-50%);
+  transform: translate(0%,-50%); */
   /* background-color: #FFFFFF; */
-  top: 50%;
+  top: 30%;
   display: inline-table;
 
 }
@@ -55,7 +60,7 @@ font-family: "Mountains of Christmas", cursive;
 display:flexbox;
 font-weight: 400;
 flex-direction: column;
-font-size: calc(3rem + 0.7vw);
+font-size: calc(4rem + 0.8vw);
 text-align: right;
 padding-right: 10px;
 text-shadow: 4px 6px #FFFFFF;
@@ -64,7 +69,7 @@ text-shadow: 4px 6px #FFFFFF;
 font-family: "Bona Nova SC", serif;
 color: #000000 !important;
 font-style: normal;
-font-size:4vmin;
+font-size:5vmin;
 text-align: right;
 font-weight: 200;
 } 
@@ -73,7 +78,7 @@ font-weight: 200;
   display:inline;
   font-weight: 400;
   color: #000000;
-  font-size: 2.5vmin;
+  font-size: 3vmin;
   text-align: right;
   /* position: absolute;
   right: 50%;
@@ -85,8 +90,9 @@ font-weight: 200;
   
   #t1 {
     display:inline-table;
-    width: calc(50% - 10px);
     text-align: center;
+    width: calc(50% - 10px);
+
     /*transform: translateX(-10%) scale(0.8, 0.8);*/
   }
   
@@ -106,7 +112,10 @@ font-weight: 200;
   width: calc(50% - 10px);
 
 }
-
+td#or {
+  line-height: 5vw !important;
+  font-size: 3vw !important;
+}
 #reveal {
   float: right;
   display: inline-table;
@@ -119,6 +128,10 @@ font-weight: 200;
   align-content: left;
   height:22em;
   position:absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
   /* background-color: #FFFFFF; */
   top: 55%;
@@ -126,32 +139,8 @@ font-weight: 200;
   border-radius: 5%;
 }
 /* Styles for mobile phones */ 
-@media (max-height:320px), (max-width:620){ 
-  
-  .pagetop h1 {
-    font-size: calc(2rem + 0.55vw);
-  }
-  .pagetop h4 {
-    font-size: calc(0.5rem + 0.55vw);
-  }
-  .pagetop h3 {
-    font-size: calc(0.7rem + 1vw);
-  }
-  #scratcher-box {
-    scale: 0.8;
-    top:40% ;
-  } 
-  #t1
-  {
-    width: calc(40% - 10px);
 
-  }
-  #reveal {
-    width: calc(45% - 10px);
-
-  }
-}
-@media (min-height: 352px), (max-height: 400px) { 
+@media only screen and (max-height: 400px), (min-height: 352px) and (max-width: 670px) { 
   .pagetop h1 {
     font-size: calc(5rem + 0.55vw);
   }
@@ -163,7 +152,7 @@ font-weight: 200;
   }
   #scratcher-box {
     scale: 0.95;
-    top: 60%Mountains of Christmas
+    top: 60%;
   }
   #t1
   {
@@ -175,12 +164,57 @@ font-weight: 200;
 
   }
 }
+@media (min-height: 400px), (min-width: 671px) { 
+  .pagetop h1 {
+    font-size: calc(3rem + 1vw);
+  }
+  .pagetop h4 {
+    font-size: calc(0.5rem + 0.70vw);
+  }
+  .pagetop h3 {
+    font-size: calc(1rem + 1.5vw);
+  }
+  #t1
+  {
+    width: calc(50% - 10px);
 
-@media (max-height:351px), (min-height:319){ 
+  }
+  #reveal {
+    width: calc(50% - 10px);
+
+  }
+}
+@media (max-height:321px), (max-width:620){ 
+  
+  .pagetop h1 {
+    font-size: calc(3rem + 0.55vw);
+  }
+  .pagetop h4 {
+    font-size: calc(0.5rem + 0.55vw);
+  }
+  .pagetop h3 {
+    font-size: calc(0.7rem + 1vw);
+  }
+  #scratcher-box {
+    scale: 0.7;
+    top:40% ;
+    left: -5%;
+  } 
+  #t1
+  {
+    width: calc(40% - 10px);
+
+  }
+  #reveal {
+    width: calc(45% - 10px);
+
+  }
+}
+/* @media (max-height:351px) and (min-height:319){ 
   
   #scratcher-box {
     scale: 0.9;
-    top:50% ;
+    top: 50%;
   }
   .pagetop h1 {
     font-size: calc(3rem + 0.55vw);
@@ -194,32 +228,8 @@ font-weight: 200;
     width: calc(45% - 10px);
 
   }
-}
+} */
 
-
-@media (max-height:340px), (max-width: 481px){ 
-  .img{
-    line-height: 0.5vh;
-  }
-  .pagetop h3 {
-    font-size: calc(1.1rem + 0.5vw);
-  }
-  .pagetop h4 {
-    font-size: calc(0.7rem + 0.6vw) ;
-  }
-  #scratcher-box {
-    scale: 0.6;
-    left: -10%;
-    top: 30%;    
-  }
-  
-  .pagetop h1 #or {
-    font-size: calc(2rem + 3vw);
-  }
-  .pagetop h1 {
-    font-size: calc(3rem + 3vw);
-  }
-}
 
 table { 
   table-layout:fixed;
