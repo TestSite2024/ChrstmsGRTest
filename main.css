@@ -100,13 +100,7 @@ white-space:normal;
 {
   white-space: normal;
 }
-#boy{
-  line-height: 8vh;
-}
-#or{
-  line-height: 8vh;
-  font-size: 6vh;
-}
+
 
 #t1 {
   width: 350px;
@@ -187,9 +181,9 @@ white-space:normal;
       -o-transform-origin: top left;
       transform-origin: top left;
   } */
-  /* #boy {
-    line-height: 3vh !important;
-  } */
+  #boy {
+    line-height: 7vh !important;
+  }
 
   #scratcher-box {
     position:absolute;
@@ -206,10 +200,10 @@ white-space:normal;
   .pagetop h4 {
     font-size: calc(0.7rem + 0.6vw) ;
   }
-  /* #boy {
+  #boy {
     line-height: 3vh !important;
   }
-  */
+ 
   #scratcher-box {
     position:absolute;
     scale: 1; 
@@ -233,7 +227,9 @@ white-space:normal;
   }
   .images{
     max-width: 80% !important;
-    
+  }
+  #boy{
+    line-height: 5vh;
   }
 }
 #scratcher-box canvas {

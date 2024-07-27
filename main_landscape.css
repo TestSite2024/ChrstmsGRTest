@@ -51,7 +51,7 @@ body {
   -o-transform: translate(0%,-50%);
   transform: translate(0%,-50%); */
   /* background-color: #FFFFFF; */
-  top: 30%;
+  top: 20%;
   display: inline-table;
 
 }
@@ -142,13 +142,13 @@ td#or {
 
 @media only screen and (max-height: 400px), (min-height: 352px) and (max-width: 670px) { 
   .pagetop h1 {
-    font-size: calc(3rem + 0.55vw);
+    font-size: calc(5rem + 0.55vw);
   }
   .pagetop h4 {
     font-size: calc(0.5rem + 0.70vw);
   }
   .pagetop h3 {
-    font-size: calc(0.7rem + 1.5vw);
+    font-size: calc(1rem + 1.5vw);
   }
   #scratcher-box {
     scale: 0.95;
@@ -164,7 +164,7 @@ td#or {
 
   }
 }
-@media (min-height: 400px), (min-width: 671px) { 
+@media (min-height: 401px), (min-width: 671px) { 
   .pagetop h1 {
     font-size: calc(5rem + 1vw);
   }
