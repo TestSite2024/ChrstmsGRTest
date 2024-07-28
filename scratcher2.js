@@ -14,7 +14,8 @@
  * depends on jQuery>=1.7
  *
  * Portions Copyright (c) 2012 Brian "Beej Jorgensen" Hall <beej@beej.us>
- *
+ * 
+ * 
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -248,7 +249,6 @@ Scratcher = (function() {
      */
     Scratcher.prototype._setupCanvases = function() {
         var c = this.canvas.main;
-    
         // create the temp and draw canvases, and set their dimensions
         // to the same as the main canvas:
         this.canvas.temp = document.createElement('canvas');
@@ -256,6 +256,14 @@ Scratcher = (function() {
         this.canvas.temp.width = this.canvas.draw.width = c.width;
         this.canvas.temp.height = this.canvas.draw.height = c.height;
     
+        function callme(){
+            for (index = 0; index < 3; index++) {
+                var a = index + 4;
+                if ($(c).attr('id') === "scratcher" + a) {
+                    return true;
+                }
+            }
+        }
         /**
          * On mouse down, draw a line starting fresh
          *
@@ -263,12 +271,12 @@ Scratcher = (function() {
          */
         function mousedown_handler(e) {
             var local = getLocalCoords(c, getEventCoords(e));
+            if (callme()) {
             this.mouseDown = true;
             this.scratchLine(local.x, local.y, true);
             this.recompositeCanvases();
-            
             this.dispatchEvent(this.createEvent('scratchesbegan'));
-            
+            }
             return false;
         };
     

@@ -24,14 +24,14 @@ var pct =new Array(9);
     var colortxt2= '#00612d';
     var colortxt3= '#000000';
     //Select the background color
-    var color =color2;
+    var color =color3;
     //Select the text color
-    var colortxt = colortxt2;
+    var colortxt = colortxt3;
     var gendertext1 = "It is a She!";
     var gendertext2 = "It is a He!";
     var gendertext3= "It is a Demo!";
     //Select the gender text
-    var gendertext = gendertext2;
+    var gendertext = gendertext3;
     var surname;
     var soundHandle = new Audio();
     var triggered=false;
@@ -81,7 +81,7 @@ var pct =new Array(9);
                 $('#girl').hide();
                 document.getElementsByTagName("body")[0].style.backgroundColor = color;
                 document.getElementsByTagName("body")[0].style.backgroundImage = 'none';
-                //document.getElementById("H3").insertAdjacentHTML('afterend', "<h4 id='testtext' style='white-space:normal'> Depending on the product you buy, here it will say either <br> 'It is a Girl!' or 'It is a Boy! with pink or blue background.</h4>");
+                document.getElementById("H3").insertAdjacentHTML('afterend', "<h4 id='testtext' style='white-space:normal'> Depending on the product you buy, here it will say either <br> 'It is a She!' or 'It is a He! with red or green background.</h4>");
 
                 $('#H3').hide();
                 $('#H4').hide();
@@ -205,6 +205,7 @@ var pct =new Array(9);
 
         document.getElementsByTagName("body")[0].style.backgroundColor = "#ffffff";
         document.getElementsByTagName("body")[0].style.backgroundImage = 'url(images/background.jpg)';
+        document.getElementById('testtext').remove();
 
         $('#H3').show();
         $('#H4').show();
@@ -324,11 +325,8 @@ var pct =new Array(9);
     
         // create new scratchers
         var scratchers = new Array(9);
-        rnd = randomInRangeint(1,9);
-        if (rnd>8) {
-            rnd=8;   
-        }
-        console.log(rnd);
+        rnd = 2
+        
         for (i = 0; i < scratchers.length; i++) {
             i1 = i + 1;
             scratchers[i] = new Scratcher('scratcher' + i1);
