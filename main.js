@@ -27,8 +27,8 @@ var pct =new Array(9);
     var color =color3;
     //Select the text color
     var colortxt = colortxt3;
-    var gendertext1 = "It is a She!";
-    var gendertext2 = "It is a He!";
+    var gendertext1 = "It is a Girl!";
+    var gendertext2 = "It is a Boy!";
     var gendertext3= "It is a Demo!";
     //Select the gender text
     var gendertext = gendertext3;
@@ -81,7 +81,7 @@ var pct =new Array(9);
                 $('#girl').hide();
                 document.getElementsByTagName("body")[0].style.backgroundColor = color;
                 document.getElementsByTagName("body")[0].style.backgroundImage = 'none';
-                document.getElementById("H3").insertAdjacentHTML('afterend', "<h4 id='testtext' style='white-space:normal'> Depending on the product you buy, here it will say either <br> 'It is a She!' or 'It is a He! with red or green background.</h4>");
+                document.getElementById("H3").insertAdjacentHTML('afterend', "<h4 id='testtext' style='white-space:normal'> Depending on the product you buy, here it will say either <br> 'It is a Girl!' or 'It is a Boy! with red or green background.</h4>");
 
                 $('#H3').hide();
                 $('#H4').hide();
