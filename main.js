@@ -160,7 +160,7 @@ var pct =new Array(9);
             confetti({
                 particleCount: 1,
                 startVelocity: 0,
-                ticks: 180,
+                ticks: 100,
                 scalar: 2,
                 origin: {
                 x: Math.random(),
