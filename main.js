@@ -24,14 +24,14 @@ var pct =new Array(9);
     var colortxt2= '#00612d';
     var colortxt3= '#000000';
     //Select the background color
-    var color =color1;
+    var color =color2;
     //Select the text color
-    var colortxt = colortxt1;
+    var colortxt = colortxt2;
     var gendertext1 = "It is a She!";
     var gendertext2 = "It is a He!";
     var gendertext3= "It is a Demo!";
     //Select the gender text
-    var gendertext = gendertext1;
+    var gendertext = gendertext2;
     var surname;
     var soundHandle = new Audio();
     var triggered=false;
@@ -324,10 +324,11 @@ var pct =new Array(9);
     
         // create new scratchers
         var scratchers = new Array(9);
-        rnd = randomInRangeint(1,10);
+        rnd = randomInRangeint(1,9);
         if (rnd>8) {
             rnd=8;   
         }
+        console.log(rnd);
         for (i = 0; i < scratchers.length; i++) {
             i1 = i + 1;
             scratchers[i] = new Scratcher('scratcher' + i1);
