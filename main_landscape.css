@@ -51,7 +51,7 @@ body {
   -o-transform: translate(0%,-50%);
   transform: translate(0%,-50%); */
   /* background-color: #FFFFFF; */
-  top: 10%;
+  top: 5%;
   display: inline-table;
 
 }
@@ -71,7 +71,6 @@ color: #000000 !important;
 font-style: normal;
 font-size:5vmin;
 text-align: right;
-font-weight: 200;
 } 
 .pagetop h4 {
   font-family: "Roboto", sans-serif;
@@ -118,10 +117,9 @@ font-weight: 200;
 
 
 
-
-
-
-
+td#or {
+font-size: 3vw !important;
+}
 #reveal {
   float: right;
   display: inline-table;
@@ -145,8 +143,6 @@ font-weight: 200;
   border-radius: 5%;
 }
 /* Styles for mobile phones */ 
-
-
 
 @media (max-height:321px), (max-width:620px){ 
   
@@ -174,7 +170,7 @@ font-weight: 200;
 
   }
 }
-@media (min-height: 365px), (min-width: 671px) { 
+@media (min-height: 365px), (max-width: 671px) { 
   .pagetop h1 {
     font-size: calc(5rem + 1vw);
   }
@@ -194,11 +190,11 @@ font-weight: 200;
   }
   #scratcher-box {
     scale: 0.95;
-    top: 50%;
+    top: 60%;
     left: 0%;
   }
 }
-@media (max-height: 364px) { 
+@media (max-height: 360px){ 
   .pagetop h1 {
     font-size: calc(5rem + 0.55vw);
   }
@@ -211,7 +207,7 @@ font-weight: 200;
   #scratcher-box {
     scale: 0.8;
     top: 40%;
-    left:-5%;
+    left:-3%;
   }
   #t1
   {
@@ -221,6 +217,19 @@ font-weight: 200;
   #reveal {
     width: calc(45% - 10px);
 
+  }
+  .pagetop {
+    top:0%;
+  }
+}
+@media (min-width: 672px) { 
+  
+  #t1
+  {
+    width: calc(55% - 10px);
+  }
+  #reveal {
+    width: calc(55% - 10px);
   }
 }
 /* @media (max-height:351px) and (min-height:319){ 
