@@ -112,14 +112,11 @@ text-align: right;
 
 }
 
-
-
-
-
-
 #or {
 font-size: 7vw !important;
+line-height: 15vh;
 }
+
 #reveal {
   float: right;
   display: inline-table;
