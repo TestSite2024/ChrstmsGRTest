@@ -65,11 +65,15 @@ text-align: right;
 padding-right: 10px;
 text-shadow: 4px 6px #FFFFFF;
 } 
+#or {
+  font-size: calc(2rem + 0.8vw);
+}
+
 .pagetop h3 {
 font-family: "Bona Nova SC", serif;
 color: #000000 !important;
 font-style: normal;
-font-size:5vmin;
+font-size: calc(1rem + 1vw);
 text-align: right;
 } 
 .pagetop h4 {
@@ -112,11 +116,6 @@ text-align: right;
 
 }
 
-#or {
-font-size: 7vw !important;
-line-height: 15vh;
-}
-
 #reveal {
   float: right;
   display: inline-table;
@@ -153,7 +152,7 @@ line-height: 15vh;
 
   }
 }
-@media (min-height: 365px), (max-width: 671px) { 
+@media (min-height: 365px) and (max-width: 671px) { 
   .pagetop h1 {
     font-size: calc(5rem + 1vw);
   }
@@ -172,12 +171,13 @@ line-height: 15vh;
 
   }
   #scratcher-box {
-    scale: 0.95;
+    width: 18em;
+    height: 18em;
     top: 50%;
     left: 0%;
   }
 }
-@media (max-height: 360px){ 
+@media (max-height: 375px){ 
   .pagetop h1 {
     font-size: calc(5rem + 0.55vw);
   }
@@ -188,9 +188,10 @@ line-height: 15vh;
     font-size: calc(1rem + 1vw);
   }
   #scratcher-box {
-    scale: 0.8;
-    top: 40%;
-    left:-3%;
+    width: 18em;
+    height: 18em;
+    top: 45%;
+    left: 0%;
   }
   #t1
   {
@@ -215,12 +216,27 @@ line-height: 15vh;
     width: calc(55% - 10px);
   }
 }
-@media (max-height:321px){ 
-  
+@media screen and (max-height:321px){ 
+  .pagetop h1 {
+    font-size: calc(1rem + 6vw);
+  }
   #scratcher-box {
-    scale: 0.7;
-    top:30% ;
-    left: -6%;
+    width: 16em;
+    height: 16em;
+    top: 45%;
+    left: 5%;
+  } 
+  
+}
+@media screen and (max-height:300px){ 
+  .pagetop h1 {
+    font-size: calc(1rem + 6vw);
+  }
+  #scratcher-box {
+    width: 15em;
+    height: 15em;
+    top: 50%;
+    left: 3vw;
   } 
   
 }
