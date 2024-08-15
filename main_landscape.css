@@ -134,7 +134,7 @@ text-align: right;
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   /* background-color: #FFFFFF; */
-  top: 55%;
+  top: 50%;
   left: 0%;
   border-radius: 5%;
 }
@@ -190,7 +190,7 @@ text-align: right;
   #scratcher-box {
     width: 18em;
     height: 18em;
-    top: 45%;
+    top: 50%;
     left: 0%;
   }
   #t1
@@ -223,19 +223,19 @@ text-align: right;
   #scratcher-box {
     width: 16em;
     height: 16em;
-    top: 45%;
+    top: 52%;
     left: 5%;
   } 
   
 }
-@media screen and (max-height:300px){ 
+@media screen and (max-height:290px){ 
   .pagetop h1 {
     font-size: calc(1rem + 6vw);
   }
   #scratcher-box {
     width: 15em;
     height: 15em;
-    top: 50%;
+    top: 52%;
     left: 3vw;
   } 
   
