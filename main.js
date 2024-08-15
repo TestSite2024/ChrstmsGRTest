@@ -289,7 +289,6 @@ var pct =new Array(9);
         document.addEventListener(
             "visibilitychange",
              function(evt) {
-                console.log("page hidden")
               if (document.visibilityState != "visible") {
                 soundHandle.pause();
                 soundHandle.currentTime=0;              }
