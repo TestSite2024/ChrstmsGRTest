@@ -85,7 +85,7 @@ var pct =new Array(9);
 
                 $('#H3').hide();
                 $('#H4').hide();
-                $('#scratcher3Pct').hide();
+                //$('#scratcher3Pct').hide();
 
                 confetti_effect();
             }
@@ -191,7 +191,7 @@ var pct =new Array(9);
     function onResetClicked(scratchers) {
         var i;
         pct = [];
-        $("#scratcher3Pct").hide();
+        //$("#scratcher3Pct").hide();
         $("#resetbutton").hide();
         for (i = 0; i < scratchers.length; i++) {
             scratchers[i].reset();
